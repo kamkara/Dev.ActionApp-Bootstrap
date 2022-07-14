@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+  
   root to:'welcome#index'
   
   #### Accounted #####
@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   #get "donate", to:'donate#index'
   #get "agisons-ensemble", to:"involved#index"
   
-  
+  # MEMBERSHIP
+  get "adherer", to:'membership#index'
+  get "members-list", to:"membership#memberslist"
+  get "beaction", to:"membership#beaction"
+
+
   devise_scope :user do
     get 'profile/edit'    => 'devise/registrations#edit',   :as => :edit_user_registration
     get 'profile/cancel'  => 'devise/registrations#cancel', :as => :cancel_user_registration

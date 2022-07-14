@@ -14,7 +14,7 @@
     <div class="w-full h-100">
       <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Connectez-vous a votre espace</h1>
      
-      <%= bootstrap_form_for(resource, as: resource_name, class:"mt-6", inline_errors: true, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, class:"mt-6", inline_errors: true, url: session_path(resource_name)) do |f| %>
         <!-- Notice error-->
         
         <div>

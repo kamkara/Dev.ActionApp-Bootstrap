@@ -1,6 +1,4 @@
-<!-- Onglet Title -->
-<% @title="Adhesion" %>
-
+<% @title="Adhérer à Action+" %>
 
 <!-- component -->
 <div class="h-screen md:flex">
@@ -9,18 +7,14 @@
 
 			<h1 class="text-white font-bold text-4xl font-sans"> 
         <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-        <span class="relative text-white">Admin</span>
+        <span class="relative text-white">Adhérer</span>
       </span>
       <br> à l'organisation humanitaire Action<sup>+</sup>
       </h1>
-			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez les Admin de Action<sup>+</sup> !
-<br> <span class="font-semibold underline"> C'est facile, gratuit et 1 minute suffira.</span></p>
+			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez les 1 433 adhérents de Action<sup>+</sup> !
+<br> <span class="font-semibold underline"> C'est facile, gratuit et 3 minutes suffiront.</span></p>
 			
-    <button type="submit" class="block uppercase  bg-white text-indigo-600
-      mt-4 py-2 rounded-2xl font-bold m-2" onclick="openModal('modal')" >
-      Ensemble pour plus d'Action
-      <sup>+</sup>
-    </button>
+    <button type="submit" class="block uppercase  bg-white text-indigo-600 mt-4 py-2 rounded-2xl font-bold m-2" onclick="openModal('modal')" >Apprendre plus sur Action<sup>+</sup></button>
 		</div>
 		<div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
 		<div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
@@ -30,11 +24,9 @@
 	<div class="flex md:w-2/3 justify-center  items-center bg-white">
 	
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-      <%= render_notification %>
-
+      <%= render "shared/flash/notices" %>
 		<h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
-		<p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherent d'Action<sup>+</sup></p>
+		<p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adhérant de Action<sup>+</sup></p>
 
 			<div class="flex items-center mt-8 mb-2">
           <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
@@ -43,20 +35,16 @@
 	
         <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full my-2" %>			
       
-      <%#= f.text_field  :country, collection: countries_alpha3_options, format: :with_data_attrs, class:"pl-2 outline-none border rounded-md", placeholder:"pays code..." %>
+          <%= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full", placeholder:"pays..." %>
       <div class="flex w-full py-2 mb-2">
-          <%#= f.country_select :country_code, priority_countries: ["CI", "FR", "CA", "US"],
-           prompt: "Votre pays", format: :with_data_attrs,
-          class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full" %>
-    
-        <%= f.text_field :country, placeholder:"code du pays ...", class:"flex border py-2 ml-2 rounded-md w-full" %>	
+        <%= f.text_field :country_code, class:"flex border py-2 rounded-md w-full", placeholder:"Code pays..." %>
         <%= f.text_field :contact, placeholder:"N° telephone ...", class:"flex border py-2 ml-2 rounded-md w-full" %>	
       </div>
       
         <%= f.password_field :password, class:"flex border py-2 rounded-md w-full", placeholder:"Mot de passe ..." %>				
-      <%= f.hidden_field :category, value:"Admin" %>
+      <%= f.hidden_field :membership_category, value:"particulier" %>
       <div class="flex items-center  py-2 ">
-      <%= f.check_box :terms, value:"oui", class:" mr-4", checked:true %>
+      <%= f.check_box :terms, value:"oui", class:" mr-4" %>
       <p class="text-sm">
         Oui, j'adhère à <%= link_to root_path, class:"font-semibold" do %> la charte des valeurs, aux statuts et 
         aux règles <br />de fonctionnement  de ACTION+, <% end %> <br />ainsi qu'aux
@@ -64,8 +52,13 @@
         de <%= link_to 'protection des données', root_path ,class:"font-semibold" %> à caractère personnel de la plateforme.
        </p>
       </div>
-      
-      <%= f.submit "Créer,Votre Admin", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
+      <div class="flex items-center pb-2 ">
+        <p class="text-sm">
+          <%= f.check_box :newletter, value:"oui", class:"mr-4" %>
+          Je souhaite être informé(e) de l'actualité de Action+ par e-mail (optionnel)
+        </p>
+      </div>
+      <%= f.submit "Oui, Devenir Membre", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
 		<% end %>
 	</div>
 </div>
@@ -99,7 +92,7 @@
 
         <!-- Modal footer -->
         <div class="px-4 py-2 border-t border-t-gray-500 flex justify-end items-center space-x-4">
-            <button class="bg-blue-500 text-black border-1 rounded-md px-4 py-2 rounded-md hover:bg-blue-700 transition" onclick="closeModal()">Fermer</button>
+            <button class="bg-blue-500 text-black border-1 rounded-md px-4 py-2 hover:bg-blue-700 transition" onclick="closeModal()">Fermer</button>
         </div>
     </div>
 </div>
