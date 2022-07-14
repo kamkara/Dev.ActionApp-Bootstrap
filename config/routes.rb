@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+   
   root to:'welcome#index'
   
   #### Accounted #####
@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   #DASHBOARD
   get "dashboard", to:'dashboard#index'
   get "parametrage", to:'dashboard#home'
-  #get "donate", to:'donate#index'
-  #get "agisons-ensemble", to:"involved#index"
+  get "donate", to:'donate#index'
+  get "agisons-ensemble", to:"involved#index"
   
   # MEMBERSHIP
   get "adherer", to:'membership#index'

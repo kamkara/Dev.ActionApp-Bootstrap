@@ -1,11 +1,11 @@
 
-<%= bootstrap_form_for(@campagne,  inline_errors: true) do |f| %>
+<%= form_for(@campagne,  inline_errors: true) do |f| %>
 <!-- label_errors: true -->
   
   <div class="form-inputs">
     <%= f.text_field :title , label:"Nom de la campagne", placeholder:"Nom de la campagne ...", help:"Plus nom reflete la cause que vous deffendez, mieux les autres adheront" %>
     <div class="">
-      <%= f.rich_text_area :content, hide_label: true, placeholder:"Le Message ...", help:"" %>
+      <%= f.rich_text_area :content, hide_label: true, placeholder:"Le Message ...", help:"" , class:" bg-white-500 border rounded-md " %>
     </div>
 
     <div class="">
