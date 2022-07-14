@@ -30,7 +30,6 @@ gem 'friendly_id'
 gem 'devise'
 
 
-
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
 
