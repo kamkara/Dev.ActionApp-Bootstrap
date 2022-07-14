@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Campagnes</h1>
+
+<div id="campagnes">
+  <% @campagnes.each do |campagne| %>
+    <%= render campagne %>
+    <p>
+      <%= link_to "Show this campagne", campagne %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New campagne", new_campagne_path %>
