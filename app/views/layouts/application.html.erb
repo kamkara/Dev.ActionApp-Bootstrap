@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevActionappBootstrap</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title><%= title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="<%= description %>">
+    <meta name="keywords" content="<%= keywords %>">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+     <%= render "shared/layouts/header" %>
+
+      <!-- Favicon-->
+    <%= favicon_link_tag asset_path('ActionIco.jpg') %>
+
+
   </head>
 
   <body>
+     <style type="text/css">
+
+
+      @media only screen and (min-width: 1025px) {
+        .hero--video-donate-form {
+          --hero_text_color: #fff;
+          --hero_bg_color: #000;
+        }
+
+        .hero--video-overlay {
+          --hero_bg_color: #000;
+        }
+      }
+    </style>
+    
     <%= yield %>
+
+    <!--Footer  -->
+     <%= render "shared/layouts/footer" %>
   </body>
 </html>
