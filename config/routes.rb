@@ -56,7 +56,7 @@ Rails.application.routes.draw do
       { :sign_in => 'connected',
         :sign_out => 'logout',
         :sign_up =>   '', 
-          :registration => 'adhesion',
+          :registration => 'devenir-membre',
           :edit => 'edit'
       }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
