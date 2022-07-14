@@ -1,9 +1,13 @@
 class ProjetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_projet, only: %i[ show edit update destroy ]
 
   # GET /projets or /projets.json
   def index
-    @projets = Projet.all
+    @MembersList = User.membership
+    @ProjetsList = Projet.all.order('created_at desc')
+    @ProjetsMonthly = @ProjetsList.monthlyActif
+    @ProjetsWeekly = @ProjetsMonthly.weeklyActif
   end
 
   # GET /projets/1 or /projets/1.json
@@ -21,11 +25,11 @@ class ProjetsController < ApplicationController
 
   # POST /projets or /projets.json
   def create
-    @projet = Projet.new(projet_params)
+    @projet = current_user.projets.build(projet_params)
 
     respond_to do |format|
       if @projet.save
-        format.html { redirect_to projet_url(@projet), notice: "Projet was successfully created." }
+        format.html { redirect_to projet_url(@projet), notice: "Projet est bien enregistré." }
         format.json { render :show, status: :created, location: @projet }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,11 +64,11 @@ class ProjetsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_projet
-      @projet = Projet.find(params[:id])
+      @projet = Projet.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def projet_params
-      params.require(:projet).permit(:title, :heroImg, :content, :start_date, :slug, :status, :amount, :user_id)
+      params.require(:projet).permit(:title, :heroImg, :content, :start_date, :amount, :status, :slug, :user_id)
     end
 end

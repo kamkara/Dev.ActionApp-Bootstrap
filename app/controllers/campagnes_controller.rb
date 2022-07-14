@@ -1,9 +1,14 @@
 class CampagnesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_campagne, only: %i[ show edit update destroy ]
 
   # GET /campagnes or /campagnes.json
   def index
-    @campagnes = Campagne.all
+    @CampagnesList = Campagne.all.order('created_at desc')
+    @MembersList = User.membership
+    @CampagnesMonthly = @CampagnesList.monthlyActif
+    @CampagnesWeekly = @CampagnesMonthly.weeklyActif
+    
   end
 
   # GET /campagnes/1 or /campagnes/1.json
@@ -21,11 +26,11 @@ class CampagnesController < ApplicationController
 
   # POST /campagnes or /campagnes.json
   def create
-    @campagne = Campagne.new(campagne_params)
+    @campagne = current_user.campagnes.build(campagne_params)
 
     respond_to do |format|
       if @campagne.save
-        format.html { redirect_to campagne_url(@campagne), notice: "Campagne was successfully created." }
+        format.html { redirect_to campagne_url(@campagne), notice: "Votre campagne est envoyée aux  administrateurs pour l'approbation." }
         format.json { render :show, status: :created, location: @campagne }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,7 +65,7 @@ class CampagnesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_campagne
-      @campagne = Campagne.find(params[:id])
+      @campagne = Campagne.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

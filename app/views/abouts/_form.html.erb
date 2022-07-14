@@ -1,57 +1,20 @@
-<%= form_with(model: about) do |form| %>
-  <% if about.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(about.errors.count, "error") %> prohibited this about from being saved:</h2>
 
-      <ul>
-        <% about.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@about) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :heroImg %>
+    <%= f.input :content %>
+    <%= f.input :country %>
+    <%= f.input :donator %>
+    <%= f.input :projets %>
+    <%= f.input :published %>
+    <%= f.association :user %>
   </div>
 
-  <div>
-    <%= form.label :heroImg, style: "display: block" %>
-    <%= form.text_field :heroImg %>
-  </div>
-
-  <div>
-    <%= form.label :slug, style: "display: block" %>
-    <%= form.text_field :slug %>
-  </div>
-
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div>
-    <%= form.label :donator, style: "display: block" %>
-    <%= form.text_field :donator %>
-  </div>
-
-  <div>
-    <%= form.label :published, style: "display: block" %>
-    <%= form.check_box :published %>
-  </div>
-
-  <div>
-    <%= form.label :projets, style: "display: block" %>
-    <%= form.text_field :projets %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
