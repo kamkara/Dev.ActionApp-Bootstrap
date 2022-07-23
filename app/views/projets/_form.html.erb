@@ -1,28 +1,33 @@
 
 <%= form_for(@projet,  inline_errors: true) do |f| %>
  
-  <div class="form-inputs">
-    <%= f.text_field  :title, label:"Nom du Projet", class:"p-2 border rounded-md", placeholder:'Nom du projet ...', help:"Plus nom reflete la cause que vous deffendez, mieux les autres adheront"  %>
+  <div class="mt-2">
+    <%= f.text_field  :title, label:"Nom du Projet", 
+    class:"form-control focus-none p-2 border rounded-md",
+     placeholder:'Nom du projet ...' %>
   </div>
   
-  <div class="">
-    <%= f.rich_text_area :content, hide_label:true, class:" bg-white-500 border rounded-md ", placeholder:'Contenu du projet ...' %>
+  <div class="my-8">
+    <%= f.rich_text_area :content, hide_label:true,
+     class:" bg-white border-2 rounded-md ",
+      placeholder:'Contenu du projet ...' %>
   </div>
-  <div class="">
-    <%= f.file_field :heroImg %>
-  </div>
-
+ 
   <div class="group">
     <%= f.date_field :start_date, class:" p-2 border rounded-md" %>
-    <%= f.select :status, Projet::STATUS, class:"p-6 border border-bblue-500 rounded-md", placeholder:'Status...' %>
-  </div>
-  <div class="">
+      <%= f.text_field :amount, 
+       hide_label:true , placeholder:"Montant prévisionnel...",
+        class:"p-2 border outline-none rounded-md mx-12" %>
     
-      <%= f.text_field :amount, prepend: ['Net Extimé', '€'], append: ['.00', 'pour le projet'], hide_label:true , placeholder:"montant ...", class:"p-2 border outline-none rounded-md" %>
+    <%= f.select :status, Projet::STATUS, 
+    class:"p-6 border border-blue-500 rounded-md",
+     placeholder:'Status...' %>
   </div>
+  </div>
+ 
       
 
   <div class="form-actions">
-    <%= f.submit "Créer Projet", class:"p-2 border rounded-md bg-green-500 font-semibold text-white my-2" %>
+    <%= f.submit "Créer le projet", class:"font-bold p-2 border rounded-md bg-green-500 font-semibold text-white my-2" %>
   </div>
 <% end %>
