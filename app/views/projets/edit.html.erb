@@ -1,10 +1,11 @@
-<h1>Editing projet</h1>
-
-<%= render "form", projet: @projet %>
+<h1>Modifier project</h1>
+<div class="container">
+  <%= render "form", projet: @projet %>
+</div>
 
 <br>
 
 <div>
-  <%= link_to "Show this projet", @projet %> |
-  <%= link_to "Back to projets", projets_path %>
+  <%= link_to "Afficher le project", @projet %> |
+  <%= link_to "Liste des projects", projets_path %>
 </div>

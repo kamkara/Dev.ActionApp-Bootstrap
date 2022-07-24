@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #PROJETS
   get "new-projet", to:"projets#new"
   get "projets-list", to:"projets#index"
-  get "edit-projets", to:"projets#edit"
+  #put "edit-projet", to:"projets#edit"
   
 
 
@@ -46,9 +46,9 @@ Rails.application.routes.draw do
     
   end
   
-  resources :projets,
-            :campagnes,
-            :abouts, only: %i[create show]
+  resources :projets
+  resources :campagnes
+  resources :abouts, only: %i[create show]
 
   devise_for  :users,
     :path => '',
