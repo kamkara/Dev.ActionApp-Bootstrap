@@ -5,7 +5,7 @@ class MembershipController < ApplicationController
   def beaction
   end
 
-  def memberlist
+  def memberslist
     @MembersList = User.membership
     @MembersMonthly = @MembersList.monthlyActif
     @MembersWeekly = @MembersMonthly.weeklyActif
