@@ -42,7 +42,7 @@ class ProjetsController < ApplicationController
   def update
     respond_to do |format|
       if @projet.update(projet_params)
-        format.html { redirect_to projet_url(@projet), notice: "Projet was successfully updated." }
+        format.html { redirect_to projet_url(@projet), notice: "Le project est mis à jour." }
         format.json { render :show, status: :ok, location: @projet }
       else
         format.html { render :edit, status: :unprocessable_entity }
