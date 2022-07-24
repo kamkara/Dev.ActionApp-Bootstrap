@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #PROJETS
   get "new-projet", to:"projets#new"
   get "projets-list", to:"projets#index"
-  get "edit-projets", to:"projets#edit"
+  get "edit-projet", to:"projets#edit"
   
 
 

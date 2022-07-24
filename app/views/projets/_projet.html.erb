@@ -1,35 +1,26 @@
 <div id="<%= dom_id projet %>">
-  <div class="container bg-white border-1 rounded-md m-2 ">
-    <p>
-      <strong>Title:</strong>
-      <%= projet.title %>
-    </p>
+  <div class="container">
 
-    <p>
-      <strong>Heroimg:</strong>
-      <%= projet.heroImg %>
-    </p>
+    <div class="border bg-white rounded-md">
+      <div class="my-2">
+      <span class="text-sm text-primary p-2"><%= projet.start_date %></span>
+      </div>
+        <div class="font-semibold"> <p class="text-xl p-2"><%= projet.title %> </p></div>
+        <div class="bg-white border-1 rounded-md m-2 p-2"> <p><%= projet.content %>  </p></div>
+    </div>
 
-    <p>
-      <strong>Content:</strong>
-      <%= projet.content %>
-    </p>
-
-    <p>
-      <strong>Start date:</strong>
-      <%= projet.start_date %>
-    </p>
-
+<!-- 
     <p>
       <strong>Amount:</strong>
-      <%= projet.amount %>
+      <%#= projet.amount %>
     </p>
     <strong>Status:</strong>
-    <span class="font-bold"> <%= projet.status %>  </span> d'approbation
+    <span class="font-bold"> <%#= projet.status %>  </span> d'approbation
     <p>
       <strong>Auteur:</strong>
-      <%= projet.user.full_name %>
+      <%#= projet.user.full_name %>
     </p>
+-->
 
   </div>
 </div>

@@ -18,9 +18,9 @@
                     <h3 class="text-gray-700 text-2xl font-medium">Liste Projet</h3>
                       <%= render @projet %>
                         
-                        <div>
-                            <%= link_to "Editer", edit_projet_path(@projet) %> |            
-                            <div class="flex-initial">
+                        <div class="">
+                            <div class="container flex">
+                            <%= link_to "Editer", edit_projet_path(@projet), class:"flex " %> |            
                                 <%= button_to  @projet, method: :delete, 
                                     class:"flex items-center px-5 py-2.5 font-medium tracking-wide text-black
                                     capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600
