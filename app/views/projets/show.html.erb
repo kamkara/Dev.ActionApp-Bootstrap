@@ -20,7 +20,12 @@
                         
                         <div class="">
                             <div class="container flex">
-                            <%= link_to "Editer", edit_projet_path(@projet), class:"flex " %> |            
+                            <%= link_to edit_projet_path(@projet), class:"flex items-center px-5 py-2.5 font-medium tracking-wide text-black
+                                    capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600
+                                    focus:outline-none  transition duration-300 transform active:scale-95 ease-in-out"  do %>
+                                    <span class="">Modifier </span>  |
+                            
+                            <% end %>           
                                 <%= button_to  @projet, method: :delete, 
                                     class:"flex items-center px-5 py-2.5 font-medium tracking-wide text-black
                                     capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600
