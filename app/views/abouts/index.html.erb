@@ -6,6 +6,7 @@
     <%= render "welcome/shared/navbar" %>
 </div>
 <!-- Navbar End -->
+
 <!-- presentations-->
 <div class="container-xxl py-5">
     <div class="container bg-green-200">
@@ -20,7 +21,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="conatainer course-item bg-light">
                 <div class="position-relative overflow-hidden">
-                    <%= image_tag "back-8.png", class:"img-fluid", alt:"" %>
+                    <%= image_tag "media/7.jpeg", class:"img-fluid", alt:"" %>
                 </div>
                         
                 <div class="d-flex border-top">
@@ -47,7 +48,7 @@
         <div class="col-lg-4 col-md-6 mb-16 ">
             <div class="course-item bg-light">
                 <div class="position-relative overflow-hidden">
-                    <%= image_tag "full.jpeg", class:"img-fluid", alt:"" %>  
+                    <%= image_tag "media/4.jpeg", class:"img-fluid", alt:"" %>  
                 </div>
                 <div class="d-flex border-top">
                     <%= link_to "#", class:"flex-fill text-center font-bold border-end py-2" do %>
@@ -64,7 +65,7 @@
             <div class="col-6 md:col-md-8">
               <p class="">Depuis la création de Action<sup>+</sup>, nous poursuivons un objectif ambitieux : mettre fin à la crise mondiale de l'eau, d'élèctricité et de l'éducation. Et même si ces crises sont énorment, nous sommes optimistes. <br> Nous savons résoudre les problèmes et nous progressons chaque jour grâce à l'aide de partenaires locaux et de généreux donateurs. <br> Si nous travaillons ensemble, nous croyons que tout le monde aura accès aux besoins les plus fondamentaux de la vie au cours de notre vie.</p> 
             </div>
-            <div class="col-4 md:col-md-4">
+            <div class="sm:col-12 md:col-md-4">
             <!-- component -->
               <div class="bg-gray-200  flex items-center justify-center">
                 
@@ -131,6 +132,7 @@
           </div>
         </div>
       </div>
+<%= render "abouts/shared/fo" %>
       <!-- newsletter -->
 <div class="container-xxl py-5">
     <%= render "welcome/shared/email_letter" %>
