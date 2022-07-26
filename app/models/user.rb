@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :abouts
   has_many :projets
   has_many :campagnes
+  has_many :blogs
 
 
   def full_name

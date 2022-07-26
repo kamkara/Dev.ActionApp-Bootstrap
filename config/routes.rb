@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  resources :blogs
    
   root to:'welcome#index'
   
