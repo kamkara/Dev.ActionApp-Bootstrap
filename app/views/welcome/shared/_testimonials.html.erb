@@ -1,46 +1,87 @@
-<div class="container">
-    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-        <h1 class="mb-3">Grace a vous!</h1>
-        <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-    </div>
-    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-        <div class="testimonial-item bg-light rounded p-3">
-            <div class="bg-white border rounded p-4">
-                <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                <div class="d-flex align-items-center">
-                    <%= image_tag "images/testimonial-1.jpg", class:"img-fluid flex-shrink-0 rounded", style:"width: 45px; height: 45px;" %>
-                    <div class="ps-3">
-                        <h6 class="fw-bold mb-1">beneficier Name</h6>
-                        <small>Profession</small>
-                    </div>
-                </div>
-            </div>
+<!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>What they're saying about us</p>
         </div>
-        <div class="testimonial-item bg-light rounded p-3">
-            <div class="bg-white border rounded p-4">
-                <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                <div class="d-flex align-items-center">
-                    <%= image_tag "images/testimonial-2.jpg", class:"img-fluid flex-shrink-0 rounded", style:"width: 45px; height: 45px;" %>
-                                
-                    <div class="ps-3">
-                        <h6 class="fw-bold mb-1">beneficier Name</h6>
-                        <small>Profession</small>
-                    </div>
-                </div>
-            </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <%= image_tag "img/testimonials/testimonials-1.jpg", class:"testimonial-img", alt:"" %>
+                
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <%= image_tag "img/testimonials/testimonials-2.jpg", class:"testimonial-img", alt:"" %>
+                
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <%= image_tag "img/testimonials/testimonials-3.jpg", class:"testimonial-img", alt:"" %>
+                
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <%= image_tag "img/testimonials/testimonials-4.jpg", class:"testimonial-img", alt:"" %>
+      
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <%= image_tag "img/testimonials/testimonials-5.jpg", class:"testimonial-img", alt:"" %>
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="testimonial-item bg-light rounded p-3">
-            <div class="bg-white border rounded p-4">
-                <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                <div class="d-flex align-items-center">
-                <%= image_tag "images/testimonial-3.jpg", class:"img-fluid flex-shrink-0 rounded", style:"width: 45px; height: 45px;" %>
-                                
-                    <div class="ps-3">
-                        <h6 class="fw-bold mb-1">beneficier Name</h6>
-                        <small>Profession</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
