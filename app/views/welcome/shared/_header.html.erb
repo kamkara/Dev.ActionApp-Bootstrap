@@ -26,11 +26,15 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#gallery">S'Identifier</a></li>
+          <li><%= link_to "S'Identifier", new_user_session_path, class:"nav-link" %>  </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Faire Un Don</a>
+     
+      <%= link_to  new_user_registration_path, class:"book-a-table-btn scrollto d-none d-lg-flex" do %>
+        <span class="">Adherer a Action<sup>+</sup></span>
+      <% end %>
+      
 
     </div>
   </header><!-- End Header -->
