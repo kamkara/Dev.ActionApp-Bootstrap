@@ -4,7 +4,7 @@
 
 @import "bases/navbar";
 @import "bases/flash";
-//@import url("components/style.css");
+@import url("components/style.css");
 @import "./actiontext.css";
 
 //@import url("components/main.css");
@@ -20,7 +20,7 @@
 }
 
 .about {
-    background: url("media/0.jpeg") center center;
+    background: url("media/famille-2.jpeg") center center;
     background-size: cover;
     position: relative;
     padding: 80px 0;
