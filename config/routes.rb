@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
   resources :blogs
-   
+  
   root to:'welcome#index'
+  get "action-projet", to:'action_page#index'
   
   #### Accounted #####
   get "connecting", to:'accounted#signInMember'
