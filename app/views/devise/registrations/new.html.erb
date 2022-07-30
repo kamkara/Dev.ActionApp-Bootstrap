@@ -52,12 +52,12 @@
         <div class="mr-4">
         <p class="">Vous etes : </p>
         </div>
-        <%= f.radio_button :gender, :value => 'Femme' %> <span class="mx-2">Femme</span>
-        <%= f.radio_button :gender, :value => 'Homme' %> <span class="mx-2">Homme</span>
+        <%= f.radio_button :gender, value:'Femme' %> <span class="mx-2">Femme</span>
+        <%= f.radio_button :gender, value:'Homme' %> <span class="mx-2">Homme</span>
       </div>
       <%= f.hidden_field :category, value:"Adherent" %>
       <div class="flex items-center  py-2 ">
-      <%= f.check_box :terms, value:"oui", class:" mr-4" %>
+      <%= f.check_box :terms, value:"oui", class:"mr-4" %>
       <p class="text-sm">
         Oui, j'adhère à <%= link_to root_path, class:"font-semibold" do %> la charte des valeurs, aux statuts et 
         aux règles <br />de fonctionnement  de ACTION+, <% end %> <br />ainsi qu'aux
