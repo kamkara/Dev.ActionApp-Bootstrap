@@ -1,11 +1,18 @@
+<!-- Top Bar -->
+<%= render "welcome/shared/top_bar" %>
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Action<sup class="no-underline">+</sup></a></h1>
+      <h1 class="logo me-auto me-lg-0">
+      <%= link_to root_path do %> Action<sup class="no-underline">+</sup><% end %>
+      
+      </h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
+          <li>
+            <%= link_to 'Accueil', root_path , class:"nav-link scrollto active" %>
+          </li>
           <li><a class="nav-link scrollto" href="#about">Nous Découvrir</a></li>
           <li><a class="nav-link scrollto" href="#why-us">Nous Aider</a></li>
           <li><a class="nav-link scrollto" href="#events">Agissons Ensemble</a></li>
@@ -26,13 +33,13 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><%= link_to "S'Identifier", new_user_session_path, class:"nav-link" %>  </li>
+          <li><%= link_to "Se Connecter", new_user_session_path, class:"nav-link" %>  </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
      
       <%= link_to  new_user_registration_path, class:"book-a-table-btn scrollto d-none d-lg-flex" do %>
-        <span class="">Adherer a Action<sup>+</sup></span>
+        <span class="">Adhérer</span>
       <% end %>
       
 
