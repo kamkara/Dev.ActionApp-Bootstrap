@@ -22,8 +22,16 @@
               data-wow-delay=".1s
               "
             >
-              <%= image_tag "media/4.jpeg",
+              
+              <% if projet.heroImg.nil? %>
+               
+                <%= image_tag "media/4.jpeg",
                 alt:"image", class:"w-full h-full object-cover object-center" %>
+                 <% else %>
+                 <div class="w-full h-full object-cover object-center">
+                 <%= image_tag projet.heroImg %>
+              </div>
+              <% end %>
               <div
                 class="
                   absolute
