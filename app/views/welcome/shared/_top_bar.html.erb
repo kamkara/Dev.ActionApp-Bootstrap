@@ -3,14 +3,13 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
 
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-phone d-flex align-items-center"><span>Soutenir Action<sup class="">+</sup></span></i>
-        <i class="bi bi-clock d-flex align-items-center ms-4"><span>Prochain Action<sup class="">+</sup> </span></i>
+        <i class="bi bi-phone d-flex align-items-center"><span><a href="#projets-soutenir" class="">Soutenir Projet<sup class="">+</sup></a></span></i>
+        <i class="bi bi-clock d-flex align-items-center ms-4"><a href="#terrain" class=""><span>Prochain Action<sup class="">+</sup> </span></a></i>
       </div>
 
       <div class="languages d-none d-md-flex align-items-center">
         <ul>
-          <li>Adhérer à</li>
-          <li><a href="#">Action<sup>+</sup> </a></li>
+          <li><%= link_to 'Je Fais Un Don', donner_path %></li>
         </ul>
       </div>
     </div>

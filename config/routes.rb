@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   root to:'welcome#index'
   get "action-projet", to:'action_page#index'
+  get "donner", to:'donner#index'
   
   #### Accounted #####
   get "connecting", to:'accounted#signInMember'
