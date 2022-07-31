@@ -1,7 +1,7 @@
 <!-- Top Bar -->
 <%= render "welcome/shared/top_bar" %>
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center bg-white">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
       <h1 class="logo me-auto me-lg-0">
         <%= link_to root_path do %> Action<sup class="no-underline">+</sup><% end %>
@@ -34,8 +34,8 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
      
-      <%= link_to  new_user_registration_path, class:"book-a-table-btn scrollto d-none d-lg-flex" do %>
-        <span class="">Adhérer</span>
+      <%= link_to  new_user_registration_path, class:"p-2 rounded-full bg-red-400 font-semibold d-none d-lg-flex" do %>
+        <span class="">Devenir Membre</span>
       <% end %>
       
 
