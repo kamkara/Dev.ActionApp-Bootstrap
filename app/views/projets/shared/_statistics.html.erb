@@ -25,7 +25,12 @@
     
                 <div class="mx-3">
                     <h4 class="text-2xl font-semibold text-gray-700"><%= @ProjetsList.count %> </h4>
-                    <div class="text-gray-500">Projets - <%= link_to "Créer", "new-projet", class:"font-semibold" %></div>
+                    <% if current_user.category === "Adherent" %>
+                        <div class="text-gray-500">Projets</div>
+                    <% else %>
+                        <div class="text-gray-500">Projets - <%= link_to "Créer", "new-projet", class:"font-semibold" %></div>
+                    <% end %>
+                    
                 </div>
             </div>
             
