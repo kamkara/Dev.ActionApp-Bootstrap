@@ -13,7 +13,7 @@
     border: 0;
     padding: 12px 15px;
     transition: 0.3s;
-    color: #fff;
+    color: black;
     border-radius: 0;
     border-right: 2px solid #cda45e;
     font-weight: 600;
@@ -21,18 +21,10 @@
 }
 
 .specials .nav-link:hover {
-    color: #cda45e;
+    color: #0a0a0a;
 }
 
-.specials .nav-link.active {
-    color: #1a1814;
-    background: #cda45e;
-    border-color: #cda45e;
-}
 
-.specials .nav-link:hover {
-    border-color: #cda45e;
-}
 
 .specials .tab-pane.active {
     -webkit-animation: fadeIn 0.5s ease-out;
@@ -43,11 +35,11 @@
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #fff;
+    color: #080808;
 }
 
 .specials .details p {
-    color: #aaaaaa;
+    color: #080808;
 }
 
 .specials .details p:last-child {
