@@ -40,14 +40,12 @@
     font-family: "Poppins", sans-serif;
 }
 
-#hero h1 span {
-    color: #cda45e;
-}
+
 
 #hero h2 {
     color: #eee;
     margin-bottom: 10px 0 0 0;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 #hero .btns {
@@ -65,15 +63,9 @@
     border-radius: 50px;
     transition: 0.3s;
     line-height: 1;
-    color: white;
-    border: 2px solid #cda45e;
+    
 }
 
-#hero .btn-menu:hover,
-#hero .btn-book:hover {
-    background: #cda45e;
-    color: #fff;
-}
 
 #hero .btn-book {
     margin-left: 15px;

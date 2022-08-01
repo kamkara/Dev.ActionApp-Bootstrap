@@ -6,7 +6,7 @@
       <h1 class="logo me-auto me-lg-0">
         <%= link_to root_path do %> Action<sup class="no-underline">+</sup><% end %>
       </h1>
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0 font-semibold">
         <ul>
           <li>
             <%= link_to 'Accueil', root_path , class:"nav-link scrollto active" %>
@@ -34,7 +34,10 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
      
-      <%= link_to  new_user_registration_path, class:"p-2 rounded-full bg-red-400 font-semibold d-none d-lg-flex" do %>
+      <%= link_to  new_user_registration_path, class:"btn-book animated fadeInUp 
+            scrollto text-white bg-red-500 hover:bg-red-400 focus:outline
+             focus:ring-4 focus:ring-red-300 font-bold rounded-b-xl rounded-tr-xl text-xl px-5
+              py-2.5 text-center mr-2 mb-2" do %>
         <span class="">Devenir Membre</span>
       <% end %>
       
