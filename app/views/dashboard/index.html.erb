@@ -24,7 +24,8 @@
                 </div>
             </main>
         </div>
-        <% else %>
+        <% elsif current_user.category === "Admin" %>
+        <%= render "dashboard/shared/sidebar" %>
         <div class="flex-1 flex flex-col overflow-hidden">
         
             <%= render "dashboard/shared/header" %>

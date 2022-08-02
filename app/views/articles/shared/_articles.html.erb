@@ -1,0 +1,22 @@
+
+
+    <h1 class="text-center font-bold text-2xl text-indigo-500">Liste des articles </h1>
+
+        
+    <% @articles.each do |article| %>
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden my-1">
+                <div class="p-3">
+                    <span class="text-sm text-primary"><%= article.write_date %></span>
+                    <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                    <%= article.title %>
+                    </h3>
+                    
+                    <%= link_to article_path(article), class:"hover:text-black text-black no-underline" do %>
+                        <%= truncate(strip_tags(article.content.to_s.html_safe), length: 400)%>
+                        <span class="bg-blue-300" id=start-reading><i class="mx-2">Lire plus >> </i></span>
+                    <% end %>
+                </div>
+            </div>
+    <% end %>
+        

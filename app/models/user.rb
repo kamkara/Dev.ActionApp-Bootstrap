@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :projets
   has_many :campagnes
   has_many :blogs
+  has_many :articles
 
 
   def full_name

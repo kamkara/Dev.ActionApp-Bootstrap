@@ -23,30 +23,43 @@
 	</div>
 	<div class="flex md:w-2/3 justify-center  items-center bg-white">
 	
+    <div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
+	
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "shared/flash/notices" %>
 		<h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
-		<p class="text-sm font-normal text-gray-600 mb-2">Devenez Admin de Action<sup>+</sup></p>
+		<p class="text-sm font-normal text-gray-600 mb-2">Devenez Administrateur Action<sup>+</sup></p>
 
 			<div class="flex items-center mt-8 mb-2">
-          <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
-          <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Prénom..." %>
+          <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-black placeholder:pl-2 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
+          <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-black placeholder:pl-2 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Prénom..." %>
+
       </div>
 	
-        <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full my-2" %>			
+        <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:pl-2 placeholder:text-black flex outline-none border py-2 rounded-md w-full my-2" %>			
       
-          <%#= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full", placeholder:"pays..." %>
-      <div class="flex w-full py-2 mb-2">
-      <%= f.text_field :country, class:"pl-2 outline-none border-none", placeholder:"pays code..." %>
-          
         
-        <%= f.text_field :full_contact, placeholder:"N° telephone ...", class:"flex border py-2 ml-2 rounded-md w-full" %>	
+      <div class="flex w-full py-2 mb-2">
+
+          <%= f.text_field  :country,
+          class:"placeholder:italic placeholder:text-black  placeholder:pl-2 flex border py-2 rounded-md w-full outline-none", placeholder:"Adresse de résidence" %>
+    
+        <%= f.text_field :full_contact, placeholder:"N° téléphone ...", class:"placeholder:text-black placeholder:pl-2 flex border py-2 ml-2 rounded-md w-full outline-none" %>	
+
       </div>
       
-        <%= f.password_field :password, class:"flex border py-2 rounded-md w-full", placeholder:"Mot de passe ..." %>				
-      <%= f.hidden_field :category, value:"admin" %>
+        <%= f.password_field :password, class:"flex border py-2 rounded-md w-full placeholder:pl-2 placeholder:text-black outline-none", placeholder:"Mot de passe ..." %>				
+      
+      <div class="flex w-full py-2">
+        <div class="mr-4">
+        <p class="">Vous etes : </p>
+        </div>
+        <%= f.radio_button :gender, value:'Femme' %> <span class="mx-2">Femme</span>
+        <%= f.radio_button :gender, value:'Homme' %> <span class="mx-2">Homme</span>
+      </div>
+      <%= f.hidden_field :category, value:"Admin" %>
       <div class="flex items-center  py-2 ">
-      <%= f.check_box :terms, value:"oui", class:" mr-4", checked:true %>
+      <%= f.check_box :terms, value:"oui", class:"mr-4", checked: true %>
       <p class="text-sm">
         Oui, j'adhère à <%= link_to root_path, class:"font-semibold" do %> la charte des valeurs, aux statuts et 
         aux règles <br />de fonctionnement  de ACTION+, <% end %> <br />ainsi qu'aux
@@ -54,8 +67,13 @@
         de <%= link_to 'protection des données', root_path ,class:"font-semibold" %> à caractère personnel de la plateforme.
        </p>
       </div>
-      
-      <%= f.submit "Créer, Compte Admin", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
+      <div class="flex items-center pb-2 ">
+        <p class="text-sm">
+          <%= f.check_box :newletter, value:"oui", class:"mr-4", checked: true %>
+          Je souhaite être informé(e) de l'actualité de Action+ par e-mail (optionnel)
+        </p>
+      </div>
+      <%= f.submit "Crée un compte admin", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
 		<% end %>
 	</div>
 </div>
