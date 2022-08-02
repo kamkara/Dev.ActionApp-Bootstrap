@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     @MembersList = User.membership
     @ProjetsList = Projet.all
     @CampagnesList = Campagne.all
+    
   end
 
   def home
