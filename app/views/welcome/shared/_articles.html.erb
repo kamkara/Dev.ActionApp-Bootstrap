@@ -13,7 +13,7 @@
           <% @HomeArticles.each do |homeArticle| %>
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
-                <%= link_to article_path(homeArticle), class:"gallery-lightbox" do %>
+                <%= link_to article_path(homeArticle), class:"gallery-lightbox", 'data-gall':"gallery-item" do %>
                   <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
                 <% end %>
               </div>
