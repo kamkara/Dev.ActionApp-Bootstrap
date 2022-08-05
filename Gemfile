@@ -29,6 +29,10 @@ gem "stimulus-rails"
 gem 'friendly_id'
 gem 'devise'
 
+#Export Excel
+#gem 'caxlsx'
+#gem 'caxlsx_rails'
+#gem 'axlsx_styler', '~> 1.1'
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
