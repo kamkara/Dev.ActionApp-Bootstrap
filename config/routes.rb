@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :privates
+  resources :legals
   resources :articles
-  get 'home/index'
   resources :blogs
+  
+  
+  get "agir", to:'agir#index'
+  get "charte", to:"legals#index"
+  get "vie-privée", to:"privates#index"
+  get 'home/index'
   
   root to:'welcome#index'
   get "action-projet", to:'action_page#index'

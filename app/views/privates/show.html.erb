@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @private %>
+
+<div>
+  <%= link_to "Edit this private", edit_private_path(@private) %> |
+  <%= link_to "Back to privates", privates_path %>
+
+  <%= button_to "Destroy this private", @private, method: :delete %>
+</div>

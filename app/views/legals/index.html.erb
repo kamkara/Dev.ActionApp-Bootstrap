@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Legals</h1>
+
+<div id="legals">
+  <% @legals.each do |legal| %>
+    <%= render legal %>
+    <p>
+      <%= link_to "Show this legal", legal %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New legal", new_legal_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_01_235015) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_05_231123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -115,6 +115,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_235015) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "legals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_legals_on_user_id"
+  end
+
+  create_table "privates", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_privates_on_user_id"
+  end
+
   create_table "projets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.string "heroImg"
@@ -162,5 +180,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_235015) do
   add_foreign_key "articles", "users"
   add_foreign_key "blogs", "users"
   add_foreign_key "campagnes", "users"
+  add_foreign_key "legals", "users"
+  add_foreign_key "privates", "users"
   add_foreign_key "projets", "users"
 end
