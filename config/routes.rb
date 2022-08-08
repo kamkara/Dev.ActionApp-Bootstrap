@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "adhesion", to:'bememberships#new'
+  resources :bememberships, except: %i[new]
   resources :activities
   resources :privates
   resources :legals

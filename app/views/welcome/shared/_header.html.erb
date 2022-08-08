@@ -1,7 +1,7 @@
 <!-- Top Bar -->
 <%#= render "welcome/shared/top_bar" %>
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center bg-white py-0 text-4xl">
+  <header id="header" class="fixed-top d-flex align-items-center bg-white py-2 text-4xl">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
       <h1 class="logo me-auto me-lg-0">
         <%= link_to root_path do %> <%= image_tag 'logo/logo-action.png', alt:"logo action+", class:"bg-gray-100 h-12 w-10 rounded-full " %><% end %>
@@ -22,7 +22,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
      
-      <%= link_to  new_user_registration_path, class:"btn-book animated fadeInUp 
+      <%= link_to  adhesion_path, class:"btn-book animated fadeInUp 
             scrollto text-white bg-red-500 hover:bg-red-400 focus:outline
              focus:ring-4 focus:ring-red-300 font-bold rounded-b-xl rounded-tr-xl text-xl px-5
               py-2.5 text-center mr-2 mb-2" do %>

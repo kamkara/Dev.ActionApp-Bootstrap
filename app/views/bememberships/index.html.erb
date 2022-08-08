@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bememberships</h1>
+
+<div id="bememberships">
+  <% @bememberships.each do |bemembership| %>
+    <%= render bemembership %>
+    <p>
+      <%= link_to "Show this bemembership", bemembership %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bemembership", new_bemembership_path %>

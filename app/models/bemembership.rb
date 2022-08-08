@@ -1,0 +1,2 @@
+class Bemembership < ApplicationRecord
+end
