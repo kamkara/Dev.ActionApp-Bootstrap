@@ -1,7 +1,7 @@
 <!-- Top Bar -->
 <%#= render "welcome/shared/top_bar" %>
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center bg-white">
+  <header id="header" class="fixed-top d-flex align-items-center bg-white py-2 text-4xl">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
       <h1 class="logo me-auto me-lg-0">
         <%= link_to root_path do %> <%= image_tag 'logo/logo-action.png', alt:"logo action+", class:" " %><% end %>
@@ -17,7 +17,7 @@
           <li><%#= link_to "Agissons Ensemble" agir_path, class:"nav-link scrollto" %></li>
           
           <li class=""><a href="#specials"><span>En Action</span></a></li>
-          <li><%= link_to "Se Connecter", new_user_session_path, class:"nav-link" %>  </li>
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -28,7 +28,5 @@
               py-2.5 text-center mr-2 mb-2" do %>
         <span class="">Adhérer</span>
       <% end %>
-      
-
     </div>
   </header><!-- End Header -->

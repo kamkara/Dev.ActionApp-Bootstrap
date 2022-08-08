@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :blogs
   
-  
+  #Legal
   get "agir", to:'agir#index'
   get "charte", to:"legals#index"
   get "vie-privée", to:"privates#index"
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   # MEMBERSHIP
   get "adherer", to:'membership#index'
   get "members-list", to:"membership#memberslist"
-  get "beaction", to:"membership#beaction"
+  get "beaction-v", to:"membership#beaction"
 
 
   # CAMPAGNES
@@ -65,14 +65,11 @@ Rails.application.routes.draw do
   devise_for  :users,
     :path => '',
     :path_names =>
-      { :sign_in => 'connected',
+      { :sign_in => 'beaction',
         :sign_out => 'logout',
         :sign_up =>   '', 
-          :registration => 'devenir-membre',
+          :registration => 'signup-admin',
           :edit => 'edit'
       }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
 end

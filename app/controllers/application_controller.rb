@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
         sign_up_params = [ :first_name, :last_name, :full_name,
                             :user_status, :country, :email, :newletter, :terms,
-                            :password, :slug, :gender, :full_contact, :category]
+                            :password, :password_confirmation, :slug, :gender, :full_contact, :category]
         
         #Devise strong Params
         devise_parameter_sanitizer.permit :sign_up, keys: sign_up_params

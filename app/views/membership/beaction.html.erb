@@ -6,10 +6,9 @@
 		<div class="container">
 
 			<h1 class="text-white font-bold text-4xl font-sans"> 
-        <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-        <span class="relative text-white">Compte Admin</span>
-      </span>
-      <br> à l'organisation humanitaire Action<sup>+</sup>
+        <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+          <p class="relative text-white">Compte Admin Action<sup>+</sup></p>
+        </div>
       </h1>
 			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez les Admin de Action<sup>+</sup> !
 <br> <span class="font-semibold underline"> C'est facile, gratuit et 1 minute suffira.</span></p>
@@ -40,44 +39,34 @@
       
         
       <div class="flex w-full py-2 mb-2">
-
           <%= f.text_field  :country,
           class:"placeholder:italic placeholder:text-black  placeholder:pl-2 flex border py-2 rounded-md w-full outline-none", placeholder:"Adresse de résidence" %>
-    
         <%= f.text_field :full_contact, placeholder:"N° téléphone ...", class:"placeholder:text-black placeholder:pl-2 flex border py-2 ml-2 rounded-md w-full outline-none" %>	
-
       </div>
-      
+      <div class="">
         <%= f.password_field :password, class:"flex border py-2 rounded-md w-full placeholder:pl-2 placeholder:text-black outline-none", placeholder:"Mot de passe ..." %>				
+      </div>
+      <div class="">
+        <%= f.password_field :password_confirmation, class:"flex border py-2 rounded-md w-full placeholder:pl-2 placeholder:text-black outline-none", placeholder:"confirmé votre mot de passe ..." %>				
+      </div>
       
       <div class="flex w-full py-2">
         <div class="mr-4">
-        <p class="">Vous etes : </p>
+        <p class="font-semibold">Vous êtes? :</p>
         </div>
         <%= f.radio_button :gender, value:'Femme' %> <span class="mx-2">Femme</span>
         <%= f.radio_button :gender, value:'Homme' %> <span class="mx-2">Homme</span>
       </div>
       <%= f.hidden_field :category, value:"Admin" %>
-      <div class="flex items-center  py-2 ">
-      <%= f.check_box :terms, value:"oui", class:"mr-4", checked: true %>
-      <p class="text-sm">
-        Oui, j'adhère à <%= link_to root_path, class:"font-semibold" do %> la charte des valeurs, aux statuts et 
-        aux règles <br />de fonctionnement  de ACTION+, <% end %> <br />ainsi qu'aux
-        <%= link_to "conditions générales d'utilisation", root_path %> de la plateforme et à la politique <br />
-        de <%= link_to 'protection des données', root_path ,class:"font-semibold" %> à caractère personnel de la plateforme.
-       </p>
-      </div>
-      <div class="flex items-center pb-2 ">
-        <p class="text-sm">
-          <%= f.check_box :newletter, value:"oui", class:"mr-4", checked: true %>
-          Je souhaite être informé(e) de l'actualité de Action+ par e-mail (optionnel)
-        </p>
-      </div>
+      <%= f.hidden_field :terms, value:"oui" %>
+      <%= f.hidden_field :newletter, value:"oui" %>
+           
       <%= f.submit "Crée un compte admin", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
 		<% end %>
 	</div>
 </div>
 
+<li><%= link_to "Se Connecter", new_user_session_path, class:"nav-link" %>  </li>
 
         <!-- Modal apprendre plus -->
 
