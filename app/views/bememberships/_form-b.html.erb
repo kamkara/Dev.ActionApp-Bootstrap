@@ -1,4 +1,4 @@
-<% @title="Compte Admin Action+" %>
+	<% @title="Compte Admin Action+" %>
 
 <!-- component -->
 <div class="h-screen md:flex">
@@ -10,7 +10,7 @@
           <p class="relative text-white">Adhésion a Action<sup>+</sup></p>
         </div>
       </h1>
-			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez les Adherants d'Action<sup>+</sup> !
+			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez Action<sup>+</sup> !
 <br> <span class="font-semibold underline"> C'est facile, gratuit et 1 minute suffira.</span></p>
 			
     
@@ -20,13 +20,13 @@
 		<div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
 		<div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
 	</div>
-	<div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
+	<div class="flex md:w-2/3 justify-center  items-center bg-white">
 	
-     <div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
-
-  <%= form_with(model: bemembership) do |f| %>
+    <div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
     <h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
  <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherent d'Action<sup>+</sup></p>
+
+  <%= form_with(model: bemembership) do |f| %>
       <% if bemembership.errors.any? %>
         <div style="color: red">
           <h2><%= pluralize(bemembership.errors.count, "error") %> prohibited this bemembership from being saved:</h2>
@@ -47,7 +47,7 @@
      
       <div class="flex w-full py-2 mb-2">	
         <%= f.text_field :country, class:"pl-2 outline-none border rounded-md", placeholder:"Adresse de residence..." %>
-        <%= f.text_field :contact, placeholder:"N° telephone suivi de indicatif du pays...", class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4" %>	
+        <%= f.text_field :contact, placeholder:"N° telephone ...", class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4" %>	
       </div>
       <div class="flex w-full py-2">
         <div class="mr-4">
@@ -72,5 +72,79 @@
         <%= f.submit "Terminer Adhésion", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
       </div>
   <% end %>
+
 	</div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Show a second modal and hide this one with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Charte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hide this modal and show the first with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 2-->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Show a second modal and hide this one with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Charte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hide this modal and show the first with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
 </div>

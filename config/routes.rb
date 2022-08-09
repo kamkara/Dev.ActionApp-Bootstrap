@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "adhesion", to:'bememberships#new'
+  get 'good', to:"bememberships#page_good"
   resources :bememberships, except: %i[new]
   resources :activities
   resources :privates
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
   root to:'welcome#index'
   get "action-projet", to:'action_page#index'
   get "dons", to:'donner#index'
-  
   #### Accounted #####
   get "connecting", to:'accounted#signInMember'
   get "adhesion-partner", to:'accounted#signUpMember'

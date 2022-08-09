@@ -9,6 +9,9 @@ class BemembershipsController < ApplicationController
   # GET /bememberships/1 or /bememberships/1.json
   def show
   end
+  def page_good
+    
+  end
 
   # GET /bememberships/new
   def new
@@ -25,7 +28,7 @@ class BemembershipsController < ApplicationController
 
     respond_to do |format|
       if @bemembership.save
-        format.html { redirect_to bemembership_url(@bemembership), notice: "Bemembership was successfully created." }
+        format.html { redirect_to good_path, notice: "Adhésion effectuée avec succes." }
         format.json { render :show, status: :created, location: @bemembership }
       else
         format.html { render :new, status: :unprocessable_entity }
