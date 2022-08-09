@@ -9,6 +9,7 @@ class BemembershipsController < ApplicationController
   # GET /bememberships/1 or /bememberships/1.json
   def show
   end
+
   def page_good
     
   end
@@ -20,6 +21,7 @@ class BemembershipsController < ApplicationController
 
   # GET /bememberships/1/edit
   def edit
+    
   end
 
   # POST /bememberships or /bememberships.json
