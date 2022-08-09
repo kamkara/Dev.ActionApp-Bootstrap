@@ -6,7 +6,7 @@ class MembershipController < ApplicationController
   end
 
   def memberslist
-    @MembersList = User.membership
+    @MembersList = Bemembership.all.order('created_at desc')
     @MembersMonthly = @MembersList.monthlyActif
     @MembersWeekly = @MembersMonthly.weeklyActif
   end

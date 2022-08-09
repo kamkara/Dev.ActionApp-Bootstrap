@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @MembersList = User.membership
+    @MembersList = Bemembership.all.order('created_at desc')
     @ProjetsList = Projet.all
     @CampagnesList = Campagne.all
     
