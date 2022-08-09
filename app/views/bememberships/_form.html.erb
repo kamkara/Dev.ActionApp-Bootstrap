@@ -1,4 +1,4 @@
-<% @title="Compte Admin Action+" %>
+<% @title="Adhésion Action+" %>
 
 <!-- component -->
 <div class="h-screen md:flex">
@@ -26,7 +26,7 @@
 
   <%= form_with(model: bemembership) do |f| %>
     <h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
- <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherent d'Action<sup>+</sup></p>
+ <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherant d'Action<sup>+</sup></p>
       <% if bemembership.errors.any? %>
         <div style="color: red">
           <h2><%= pluralize(bemembership.errors.count, "error") %> prohibited this bemembership from being saved:</h2>
@@ -62,10 +62,10 @@
         <%= f.check_box :terms, value:"oui", class:" mr-4", checked:true %>
         <p class="text-sm">
         
-          Oui, j'adhère à <a href="#exampleModalToggle" class="font-semibold underline" > la charte des valeurs, aux statuts et 
-          aux règles de fonctionnement d'Action<a><sup class="">+</sup>, ainsi qu'aux
-          <a href="#exampleModalToggle2" class="font-semibold underline" >conditions générales d'utilisation <a> et à la politique
-          de  <a href="#exampleModalToggle3" class="font-semibold underline" >protection des données <a> de la plateforme.
+          Oui, j'adhère à <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="font-semibold underline">
+          la charte des valeurs, aux statuts et aux règles de fonctionnement d'Action</button><sup class="">+</sup>, ainsi qu'aux
+          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="font-semibold underline">conditions générales d'utilisation </buttom> <span class="no-underline ">et à la politique
+          de</span>   <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-3" class="font-semibold underline ml-1"> protection des données </button> de la plateforme.
         </p>
       </div>
       <div>
@@ -73,4 +73,60 @@
       </div>
   <% end %>
 	</div>
+</div>
+
+
+<!-- Modal Privacy-->
+<div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Protection des données</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Charte -->
+<div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">La charte et les règles de fonctionnement d'Action<sup class="">+</sup></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal CGU-->
+<div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Les conditions générale d'utilisation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
 </div>
