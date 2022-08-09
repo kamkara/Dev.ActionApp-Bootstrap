@@ -11,7 +11,8 @@
         </div>
       </h1>
 			<p class="text-black mt-1">Vous voulez contribuer à sauver des vies ? <br> Rejoignez les Adherants d'Action<sup>+</sup> !
-<br> <span class="font-semibold underline"> C'est facile, gratuit et 1 minute suffira.</span></p>
+      <br>
+      <span class="font-semibold underline"> C'est facile, gratuit et 1 minute suffira.</span></p>
 			
     
 		</div>
@@ -21,57 +22,55 @@
 		<div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
 	</div>
 	<div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
-	
-     <div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
 
-  <%= form_with(model: bemembership) do |f| %>
-    <h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
- <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherant d'Action<sup>+</sup></p>
-      <% if bemembership.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(bemembership.errors.count, "error") %> prohibited this bemembership from being saved:</h2>
+    <%= form_with(model: bemembership) do |f| %>
+      <h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
+      <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherant d'Action<sup>+</sup></p>
+        <% if bemembership.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(bemembership.errors.count, "error") %> prohibited this bemembership from being saved:</h2>
 
-          <ul>
-            <% bemembership.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
+            <ul>
+              <% bemembership.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="mx-2">	
+        <div class="flex items-center mt-8 mb-2">
+          <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
+          <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Prénom..." %>
         </div>
-      <% end %>
-      <div class="flex items-center mt-8 mb-2">
-        <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
-        <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Prénom..." %>
-      </div>
-	
-      <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full my-2" %>			
-     
-      <div class="flex w-full py-2 mb-2">	
-        <%= f.text_field :country, class:"pl-2 outline-none border rounded-md", placeholder:"Adresse de residence..." %>
-        <%= f.text_field :contact, placeholder:"N° telephone suivi de indicatif du pays...", class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4" %>	
-      </div>
-      <div class="flex w-full py-2">
-        <div class="mr-4">
-          <p class="font-semibold">Vous êtes? :</p>
+    
+        <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full my-2" %>			
+      
+          <%= f.text_field :country, class:"pl-2 outline-none border rounded-md py-2 rounded-md w-full placeholder:mx-4 mb-2" , placeholder:"Adresse de residence..." %>
+          <%= f.text_field :contact, placeholder:"N° telephone suivi de indicatif du pays...", class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4" %>	
+        <div class="flex w-full py-2">
+          <div class="mr-4">
+            <p class="font-semibold">Vous êtes? :</p>
+          </div>
+          <%= f.radio_button :gender, 'Femme' %> <span class="mx-2">Femme</span>
+          <%= f.radio_button :gender, 'Homme' %> <span class="mx-2">Homme</span>
         </div>
-        <%= f.radio_button :gender, 'Femme' %> <span class="mx-2">Femme</span>
-        <%= f.radio_button :gender, 'Homme' %> <span class="mx-2">Homme</span>
-      </div>
 
 
-      <div class="flex items-center  py-2 ">
-        <%= f.check_box :terms, value:"oui", class:" mr-4", checked:true %>
-        <p class="text-sm">
-        
-          Oui, j'adhère à <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="font-semibold underline">
-          la charte des valeurs, aux statuts et aux règles de fonctionnement d'Action</button><sup class="">+</sup>, ainsi qu'aux
-          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="font-semibold underline">conditions générales d'utilisation </buttom> <span class="no-underline ">et à la politique
-          de</span>   <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-3" class="font-semibold underline ml-1"> protection des données </button> de la plateforme.
-        </p>
-      </div>
-      <div>
-        <%= f.submit "Terminer Adhésion", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
-      </div>
-  <% end %>
+        <div class="flex items-center  py-2 ">
+          <%= f.check_box :terms, value:"oui", class:" mr-4", checked:true %>
+          <p class="text-sm">
+          
+            Oui, j'adhère à <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="font-semibold underline">
+            la charte des valeurs, aux statuts et aux règles de fonctionnement d'Action</a><sup class="">+</sup>, ainsi qu'aux
+            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="font-semibold underline">conditions générales d'utilisation </a> <span class="no-underline ">et à la politique
+            de</span>   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-3" class="font-semibold underline ml-1"> protection des données </a> de la plateforme.
+          </p>
+        </div>
+        <div>
+          <%= f.submit "Terminer Adhésion", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
+        </div>
+        </div>
+    <% end %>
 	</div>
 </div>
 

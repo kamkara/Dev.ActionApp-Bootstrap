@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   get "adhesion", to:'bememberships#new'
   get 'good', to:"bememberships#page_good"
-  resources :bememberships, except: %i[new]
-  resources :activities
+  resources :bememberships
   resources :privates
   resources :legals
   resources :articles

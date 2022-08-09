@@ -5,7 +5,6 @@ class DashboardController < ApplicationController
     @MembersList = Bemembership.all.order('created_at desc')
     @ProjetsList = Projet.all
     @CampagnesList = Campagne.all
-    
   end
 
   def home
