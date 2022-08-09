@@ -1,5 +1,5 @@
 class BemembershipsController < ApplicationController
-  before_action :set_bemembership, only: %i[ show edit update destroy ]
+  before_action :set_bemembership, only: %i[  edit update destroy ]
 
   # GET /bememberships or /bememberships.json
   def index
