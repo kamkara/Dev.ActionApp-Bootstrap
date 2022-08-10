@@ -45,8 +45,12 @@
     
         <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 flex border py-2 rounded-md w-full my-2" %>			
       
-          <%= f.text_field :country, class:"pl-2 outline-none border rounded-md py-2 rounded-md w-full placeholder:mx-4 mb-2" , placeholder:"Adresse de residence..." %>
-          <%= f.text_field :contact, placeholder:"N° telephone suivi de indicatif du pays...", class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4" %>	
+        <div class="flex items-center mt-8 mb-2">
+          <%= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Pays de résidence ..." %>
+          <%= f.text_field :citytown, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Ville de résidence ..." %>
+        </div>
+        
+          <%= f.text_field :contact, class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4", placeholder:"N° télèphone suivi de indicatif du pays..." %>	
         <div class="flex w-full py-2">
           <div class="mr-4">
             <p class="font-semibold">Vous êtes? :</p>
