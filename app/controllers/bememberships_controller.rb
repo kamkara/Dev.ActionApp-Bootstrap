@@ -1,14 +1,17 @@
 class BemembershipsController < ApplicationController
-  before_action :set_bemembership, only: %i[edit update destroy ]
+  before_action :set_bemembership, only: %i[  edit update destroy ]
 
   # GET /bememberships or /bememberships.json
   def index
     @bememberships = Bemembership.all
   end
 
-  
+  # GET /bememberships/1 or /bememberships/1.json
+  def show
+  end
 
   def page_good
+    
   end
 
   # GET /bememberships/new
@@ -28,7 +31,7 @@ class BemembershipsController < ApplicationController
     respond_to do |format|
       if @bemembership.save
         format.html { redirect_to good_path, notice: "Adhésion effectuée avec succes." }
-        format.json { render :show, status: :created, location: @bemembership }
+        format.json { render :show, status: :created, location: @bememberships }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @bemembership.errors, status: :unprocessable_entity }
@@ -67,6 +70,6 @@ class BemembershipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bemembership_params
-      params.require(:bemembership).permit(:first_name, :last_name, :email, :country, :contact, :gender)
+      params.require(:bemembership).permit(:first_name, :last_name, :email, :country, :contact, :gender, :terms)
     end
 end
