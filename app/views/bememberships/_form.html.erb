@@ -28,7 +28,7 @@
       <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherant d'Action<sup>+</sup></p>
         <% if bemembership.errors.any? %>
           <div style="color: red">
-            <h2><%= pluralize(bemembership.errors.count, "error") %> prohibited this bemembership from being saved:</h2>
+            <h2><%= pluralize(bemembership.errors.count, "erreur") %> trouvée. Veillez rectifier les points:</h2>
 
             <ul>
               <% bemembership.errors.each do |error| %>
