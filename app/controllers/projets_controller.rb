@@ -4,7 +4,7 @@ class ProjetsController < ApplicationController
 
   # GET /projets or /projets.json
   def index
-    @MembersList = User.membership
+    @MembersList = Bemembership.all.order('created_at desc')
     @ProjetsList = Projet.all.order('created_at desc')
     @ProjetsMonthly = @ProjetsList.monthlyActif
     @ProjetsWeekly = @ProjetsMonthly.weeklyActif

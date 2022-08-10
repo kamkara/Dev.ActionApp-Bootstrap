@@ -1,17 +1,14 @@
 class BemembershipsController < ApplicationController
-  before_action :set_bemembership, only: %i[  edit update destroy ]
+  before_action :set_bemembership, only: %i[edit update destroy ]
 
   # GET /bememberships or /bememberships.json
   def index
     @bememberships = Bemembership.all
   end
 
-  # GET /bememberships/1 or /bememberships/1.json
-  def show
-  end
+  
 
   def page_good
-    
   end
 
   # GET /bememberships/new
