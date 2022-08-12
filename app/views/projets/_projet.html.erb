@@ -23,23 +23,24 @@
               "
             >
               
-              <% if projet.heroImg.nil? %>
-               <%= link_to root_path, class:"" do %>
-                <%= image_tag "media/4.jpeg", alt:"image", class:"w-full h-full object-cover object-center" %>
-               <% end %>
-               
-                 <% else %>
-                 <div class="w-full h-full object-cover object-center">
-                 <%= image_tag projet.heroImg %>
-              </div>
+              <% if projet.heroImg.attached? %>
+                <%= image_tag(projet.heroImg, alt:"image", class:"w-full h-full object-cover object-center") %>
+              <% else %>
+                <div class="w-full h-full object-cover object-center">
+                  <%= image_tag "media/6.jpeg", alt:"image", class:"w-full h-full object-cover object-center" %>
+                </div>
               <% end %>
               <div
                 class=" absolute w-full h-full top-0  left-0  flex  items-end z-10
                     bg-gradient-to-t from-dark-700  to-transparent">
-                <div class="flex flex-wrap items-center p-4 sm:p-8 pb-4">
-                  <div class="flex items-center mb-4 mr-5 md:mr-10">
-                    <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                <div class="flex flex-wrap items-center p-4 sm:p-2 pb-4">
+                  <div class="flex items-center mb-2 mr-5 md:mr-10">
+                    <div class="overflow-hidden mr-4 h-10 w-10 rounded-full">
+                     <% if projet.user.avatar.attached? %>
+                      <%= image_tag(projet.user.avatar) %>
+                      <% else %>
                       <%= image_tag "media/3.jpeg", alt:"image", class:"w-full" %>
+                    <% end %>
                     </div>
                     <p class="text-base text-white font-medium">
                       par
@@ -126,144 +127,6 @@
                     <%= projet.content %>
                   </p>
 
-                  <div class="flex flex-wrap items-center -mx-4 mb-12">
-                    <div class="w-full md:w-1/2 px-4">
-                      <div
-                        class="
-                          flex
-                          items-center
-                          flex-wrap
-                          mb-8
-                          md:mb-0
-                          wow
-                          fadeInUp
-                        "
-                        data-wow-delay=".1s"
-                      >
-                        <a
-                          href="javascript:void(0)"
-                          class="
-                            block
-                            py-2
-                            px-5
-                            bg-primary bg-opacity-5
-                            text-primary
-                            rounded
-                            text-xs
-                            font-medium
-                            mr-2
-                            md:mr-4
-                            lg:mr-2
-                            xl:mr-4
-                            mb-2
-                            hover:bg-opacity-100 hover:text-white
-                          "
-                        >
-                          Design
-                        </a>
-                        <a
-                          href="javascript:void(0)"
-                          class="
-                            block
-                            py-2
-                            px-5
-                            bg-primary bg-opacity-5
-                            text-primary
-                            rounded
-                            text-xs
-                            font-medium
-                            mr-2
-                            md:mr-4
-                            lg:mr-2
-                            xl:mr-4
-                            mb-2
-                            hover:bg-opacity-100 hover:text-white
-                          "
-                        >
-                          <%= projet.status %>
-                        </a>
-                        <a
-                          href="javascript:void(0)"
-                          class="
-                            block
-                            py-2
-                            px-5
-                            mb-2
-                            bg-primary bg-opacity-5
-                            text-primary
-                            rounded
-                            text-xs
-                            font-medium
-                            hover:bg-opacity-100 hover:text-white
-                          "
-                        >
-                          Info
-                        </a>
-                      </div>
-                    </div>
-                    <div class="w-full md:w-1/2 px-4">
-                      <div
-                        class="flex items-center md:justify-end wow fadeInUp"
-                        data-wow-delay=".1s"
-                      >
-                        <span class="text-sm text-body-color font-medium mr-5">
-                          Partager le projet
-                        </span>
-                        <div class="flex items-center">
-                          <a href="javascript:void(0)" class="mr-4 mb-2">
-                            <svg
-                              width="32"
-                              height="32"
-                              viewBox="0 0 32 32"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
-                                fill="#4064AC"
-                              />
-                              <path
-                                d="M19.439 14.4H18.1992H17.7564V13.8839V12.2839V11.7677H18.1992H19.1291C19.3726 11.7677 19.5719 11.5613 19.5719 11.2516V8.51613C19.5719 8.23226 19.3947 8 19.1291 8H17.5128C15.7638 8 14.5461 9.44516 14.5461 11.5871V13.8323V14.3484H14.1033H12.5978C12.2878 14.3484 12 14.6323 12 15.0452V16.9032C12 17.2645 12.2435 17.6 12.5978 17.6H14.059H14.5018V18.1161V23.3032C14.5018 23.6645 14.7454 24 15.0996 24H17.1807C17.3136 24 17.4243 23.9226 17.5128 23.8194C17.6014 23.7161 17.6678 23.5355 17.6678 23.3806V18.1419V17.6258H18.1328H19.1291C19.4169 17.6258 19.6383 17.4194 19.6826 17.1097V17.0839V17.0581L19.9925 15.2774C20.0147 15.0968 19.9925 14.8903 19.8597 14.6839C19.8154 14.5548 19.6161 14.4258 19.439 14.4Z"
-                                fill="white"
-                              />
-                            </svg>
-                          </a>
-                          <a href="javascript:void(0)" class="mr-4 mb-2">
-                            <svg
-                              width="32"
-                              height="33"
-                              viewBox="0 0 32 33"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M32 16.7347C32 25.5713 24.8366 32.7347 16 32.7347C7.16344 32.7347 0 25.5713 0 16.7347C0 7.89818 7.16344 0.734741 16 0.734741C24.8366 0.734741 32 7.89818 32 16.7347ZM23.6036 12.8349C24.3771 12.7431 25.1147 12.5375 25.8004 12.2334C25.2878 13.0004 24.6395 13.6738 23.8917 14.2128C23.8991 14.3765 23.9028 14.5417 23.9028 14.7074C23.9028 19.7617 20.0558 25.5892 13.0213 25.5892C10.8616 25.5892 8.85088 24.9563 7.15927 23.8708C7.45789 23.9064 7.76307 23.9244 8.07111 23.9244C9.8634 23.9244 11.5122 23.3132 12.8214 22.2873C11.1474 22.2562 9.73534 21.1504 9.24876 19.6313C9.48206 19.6758 9.72136 19.6995 9.96836 19.6995C10.3166 19.6995 10.6552 19.653 10.9757 19.5652C9.22651 19.2141 7.90768 17.6685 7.90768 15.8154C7.90768 15.7995 7.90768 15.7832 7.90796 15.767C8.42335 16.0542 9.01346 16.2262 9.64007 16.2458C8.61444 15.5602 7.93876 14.3891 7.93876 13.0625C7.93876 12.3618 8.12758 11.7044 8.45672 11.1396C10.3431 13.4541 13.1613 14.9766 16.3398 15.1361C16.2742 14.856 16.2402 14.5642 16.2402 14.2644C16.2402 12.1527 17.953 10.44 20.0647 10.44C21.1653 10.44 22.1593 10.9043 22.8569 11.6473C23.7277 11.4759 24.5466 11.1579 25.2856 10.7195C24.9995 11.6131 24.3934 12.3618 23.6036 12.8349Z"
-                                fill="#55ACEE"
-                              />
-                            </svg>
-                          </a>
-                          <a href="javascript:void(0)" class="mb-2">
-                            <svg
-                              width="33"
-                              height="32"
-                              viewBox="0 0 33 32"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M32.7861 16C32.7861 24.8366 25.6227 32 16.7861 32C7.94958 32 0.786133 24.8366 0.786133 16C0.786133 7.16344 7.94958 0 16.7861 0C25.6227 0 32.7861 7.16344 32.7861 16ZM8.50669 8.82376C8.50669 7.69545 9.36262 6.83666 10.6709 6.83666C11.9795 6.83666 12.7835 7.69545 12.8089 8.82376C12.8089 9.92811 11.9795 10.8117 10.6455 10.8117H10.6207C9.33781 10.8117 8.50669 9.92811 8.50669 8.82376ZM26.3457 23.884V17.2875C26.3457 13.7551 24.4593 12.1112 21.9431 12.1112C19.9109 12.1112 19.0045 13.2292 18.4963 14.0113V12.3813H14.6712C14.7226 13.4602 14.6712 23.8837 14.6712 23.8837H18.496V17.4595C18.496 17.1147 18.5219 16.7733 18.6226 16.5274C18.8998 15.8395 19.5276 15.129 20.5843 15.129C21.969 15.129 22.5212 16.1843 22.5212 17.7296V23.884H26.3457ZM18.4963 14.0113V14.0489H18.4709C18.4745 14.0424 18.4793 14.0358 18.4841 14.0292L18.4841 14.0291C18.4883 14.0232 18.4926 14.0173 18.4963 14.0113ZM8.73421 23.8839H12.5575V12.3812H8.73421V23.8839Z"
-                                fill="#007AB9"
-                              />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="w-full lg:w-4/12 px-4">
@@ -288,54 +151,102 @@
                     <h3 class="font-semibold text-white mb-2 text-2xl">
                       Nous Aider a réalisé plus
                     </h3>
-                    <p class="text-base text-white mb-8">
-                      Enter your email to receive our latest newsletter.
-                    </p>
+                    
                     <form>
-                      <input
-                        type="email"
-                        placeholder="Your email address"
-                        class="
-                          w-full
-                          text-center
-                          h-[50px]
-                          text-sm
-                          font-medium
-                          bg-white bg-opacity-20
-                          placeholder-white
-                          text-white
-                          rounded
-                          mb-4
-                          outline-none
-                          border border-transparent
-                          focus-visible:shadow-none
-                          focus:border-white
-                        "
-                      />
-                      <input
+                      <div class="relative py-8 px-2 md:px-10 bg-white shadow-md rounded border border-gray-400">
+          
+            <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Informations de Dons</h1>
+              <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nom Complet</label>
+              <input id="name" class="mb-3 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 
+              font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Konan James" />
+              
+              <label for="email2" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">N° de la Carte</label>
+              <div class="relative mb-3 mt-2">
+                <div class="absolute text-gray-600 flex items-center px-4 border-r h-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <line x1="7" y1="15" x2="7.01" y2="15" />
+                    <line x1="11" y1="15" x2="13" y2="15" />
+                  </svg>
+                </div>
+                <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-16 text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
+              </div>
+              <label for="expiry" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Date D'Expiration</label>
+              <div class="relative mb-3 mt-2">
+                <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="4" y="5" width="16" height="16" rx="2" />
+                    <line x1="16" y1="3" x2="16" y2="7" />
+                    <line x1="8" y1="3" x2="8" y2="7" />
+                    <line x1="4" y1="11" x2="20" y2="11" />
+                    <rect x="8" y="15" width="2" height="2" />
+                  </svg>
+                </div>
+                <input id="expiry" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+              </div>
+              <label for="cvc" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">CVC</label>
+              <div class="relative mb-5 mt-2">
+                <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                      <polyline points="11 12 12 12 12 16 13 16"></polyline>
+                  </svg>
+                </div>
+                <input id="cvc" class="mb-8 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+              
+              </div>
+              <div class="relative mb-5 mt-2">
+              <label class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Montant du Don</label><hr class="mb-3">
+               <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">10$</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked >
+                <label class="form-check-label" for="inlineRadio2">20$</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                <label class="form-check-label" for="inlineRadio3">50$</label>
+              </div>
+
+                <input class="mb-8 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Autres montant" />
+              
+              </div>
+
+              <div class="flex items-center justify-start w-full">
+                  <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700
+                   transition duration-150 ease-in-out hover:bg-green-600 bg-green-700 rounded
+                   text-white px-8 py-2 text-sm">Don Mensuel</button>
+                  <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3
+                   bg-gray-300 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400
+                    hover:bg-gray-300 border rounded px-8 py-2 text-sm" >Une Fois</button>
+              </div>
+              <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+                  <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+              </button>
+                <div class=" mt-8">
+              <input
                         type="submit"
-                        value="Subscribe Now"
-                        class="
-                          w-full
-                          text-center
-                          h-[50px]
-                          text-sm
-                          font-medium
-                          text-white
-                          rounded
-                          mb-6
-                          bg-[#13C296]
-                          cursor-pointer
-                          hover:shadow-lg hover:bg-opacity-90
-                          transition
-                          duration-300
-                          ease-in-out
-                        "
-                      />
+                        value="Valider le Don"
+                        class="w-full text-center h-[50px] text-sm font-medium text-white rounded bg-red-500 cursor-pointer hover:shadow-lg hover:bg-opacity-90 transition duration-300 ease-in-out "/>
+                </div>
+            </div>
+
+           
+          </div>
+                      
                     </form>
-                    <p class="text-sm font-medium text-white">
-                      Don't worry, we don't spam
-                    </p>
+                    
 
                     <div>
                       <span class="absolute top-0 right-0">
@@ -627,3 +538,9 @@
     </section>
       </div>
     <!-- ====== Blog Details Section End -->
+
+    <!-- footer -->
+<%= render "welcome/shared/footer" %>
+<!-- preloader -->
+<%= render "welcome/shared/preloader" %>
+
