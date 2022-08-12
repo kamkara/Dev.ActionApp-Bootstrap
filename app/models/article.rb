@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
-  has_one_attached :heroImg
   belongs_to :user
   has_rich_text :content
- 
+  has_one_attached :heroImg
+  
 
   STATUS= ["Encours", "Approbation", "Public", "La lune", "Archive"]
   validates :title, :content, :write_date, :slug, presence: true

@@ -24,7 +24,7 @@
               
               <% if article.heroImg.attached? %>
                 <div class="w-full h-full object-cover object-center">
-                  <%= article.heroImg %>
+                  <%= image_tag(article.heroImg) %>
                 </div>
               <% else %>
                 <%= image_tag "media/4.jpeg", alt:"image", class:"w-full h-full object-cover object-center" %>
@@ -35,7 +35,11 @@
                 <div class="flex flex-wrap items-center p-4 sm:p-8 pb-4">
                   <div class="flex items-center mb-4 mr-5 md:mr-10">
                     <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                    <% if article.user.avatar.attached? %>
+                      <%= image_tag(article.user.avatar) %>
+                      <% else %>
                       <%= image_tag "media/3.jpeg", alt:"image", class:"w-full" %>
+                    <% end %>
                     </div>
                     <p class="text-base text-white font-medium">
                       par
@@ -189,6 +193,7 @@
                   </div>
                 </div>
               </div>
+               <!-- ====== Blog Details Section End 
               <div class="w-full lg:w-4/12 px-4">
                 <div>
                   <div
@@ -542,6 +547,7 @@
                   </div>
                 </div>
               </div>
+              -->
             </div>
           </div>
         </div>

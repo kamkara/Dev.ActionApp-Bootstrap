@@ -24,17 +24,21 @@
   </div>
  
  <div class="my-8">
-  <%= f.label :heroImg, 'Image de couverture' %>
+  <%= f.label 'Image de couverture' %>
   <div class="">
       <%= f.file_field :heroImg, class:"" %>
   </div>
  </div>
   <div class="group">
-    <%= f.date_field :write_date, class:" p-2 border rounded-md" %>
-         
-    <%= f.select :status, Article::STATUS, 
-    class:"p-6 border border-blue-500 rounded-md",
-     placeholder:'Status...' %>
+    <div class="my-2">
+      <%= f.label "Date Publication:" %> <br>
+      <%= f.date_field :write_date, class:" p-2 border rounded-md" , placeholder:"Date de publication" %>
+    </div>
+    
+    <div class=" mb-4">
+    
+    <%= f.select :status, Article::STATUS, class:"p-6 border border-blue-500 rounded-md", paceholder:'Status...' %>
+    </div>
   </div>
   </div>
  
