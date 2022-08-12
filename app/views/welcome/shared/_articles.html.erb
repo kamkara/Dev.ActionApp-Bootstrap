@@ -10,42 +10,17 @@
 
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-0">
-        <div class="col-lg-3 col-md-4">
-              <div class="gallery-item">
-                <%= link_to "#", class:"gallery-lightbox" do %>
-                  <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
-                <% end %>
-              </div>
-            </div>
+        
+          <% @HomeArticles.each do |homeArticle| %>
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
-                <%= link_to "#", class:"gallery-lightbox" do %>
+                <%= link_to article_path(homeArticle), class:"gallery-lightbox" do %>
                   <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
                 <% end %>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4">
-              <div class="gallery-item">
-                <%= link_to "#", class:"gallery-lightbox" do %>
-                  <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
-                <% end %>
-              </div>
-            </div><div class="col-lg-3 col-md-4">
-              <div class="gallery-item">
-                <%= link_to "#", class:"gallery-lightbox" do %>
-                  <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
-                <% end %>
-              </div>
-            </div><div class="col-lg-3 col-md-4">
-              <div class="gallery-item">
-                <%= link_to "#", class:"gallery-lightbox" do %>
-                  <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
-                <% end %>
-              </div>
-            </div>
-          <%# @HomeArticles.each do |homeArticle| %>
             
-          <%# end %>
+          <% end %>
         </div>
       </div>
     </section><!-- End Gallery Section -->

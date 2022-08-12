@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :campagnes
   has_many :blogs
   has_many :articles
-
+  has_one_attached :avatar
 
   def full_name
     self.full_name = "#{self.first_name} #{self.last_name}" 

@@ -22,15 +22,12 @@
               "
             >
               
-              <% if article.heroImg.nil? %>
-               <%= link_to "#", class:"" do %>
+              <% if article.heroImg.attached? %>
+                <div class="w-full h-full object-cover object-center">
+                  <%= article.heroImg %>
+                </div>
+              <% else %>
                 <%= image_tag "media/4.jpeg", alt:"image", class:"w-full h-full object-cover object-center" %>
-               <% end %>
-               
-                 <% else %>
-                 <div class="w-full h-full object-cover object-center">
-                 <%= article.heroImg %>
-              </div>
               <% end %>
               <div
                 class=" absolute w-full h-full top-0  left-0  flex  items-end z-10

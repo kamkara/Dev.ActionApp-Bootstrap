@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  has_one_attached :heroImg
   belongs_to :user
   has_rich_text :content
  

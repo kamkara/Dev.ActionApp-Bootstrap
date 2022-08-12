@@ -40,7 +40,7 @@
         
       <div class="flex w-full py-2 mb-2">
           <%= f.text_field  :country,
-          class:"placeholder:italic placeholder:text-black  placeholder:pl-2 flex border py-2 rounded-md w-full outline-none", placeholder:"Admin - SuperAdmin etc..." %>
+          class:"placeholder:italic placeholder:text-black  placeholder:pl-2 flex border py-2 rounded-md w-full outline-none", placeholder:"Pays de résidence Actuelle..." %>
         <%= f.text_field :full_contact, placeholder:"N° téléphone ...", class:"placeholder:text-black placeholder:pl-2 flex border py-2 ml-2 rounded-md w-full outline-none" %>	
       </div>
       <div class="">
@@ -48,6 +48,10 @@
       </div>
       <div class="py-2">
         <%= f.password_field :password_confirmation, class:"flex border py-2 rounded-md w-full placeholder:pl-2 placeholder:text-black placeholder:italic outline-none", placeholder:"confirmé votre mot de passe ..." %>				
+      </div>
+      <div class="my-12">
+      <%= f.label "Photo de profil:" %>
+        <%= f.file_field :avatar, class:"rounded-md border-2 bg-gray-200"%>				
       </div>
       
       <div class="flex w-full py-2">

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to:'welcome#index'
+
+
   get "adhesion", to:'bememberships#new'
   get 'good', to:"bememberships#page_good"
   resources :bememberships
@@ -8,12 +11,13 @@ Rails.application.routes.draw do
   resources :blogs
   
   #Legal
+  get "charte", to:"legals#show"
+  get "vie-privée", to:"privates#show"
+  
+  
   get "agir", to:'agir#index'
-  get "charte", to:"legals#index"
-  get "vie-privée", to:"privates#index"
   get 'home/index'
   
-  root to:'welcome#index'
   get "action-projet", to:'action_page#index'
   get "dons", to:'donner#index'
   #### Accounted #####
