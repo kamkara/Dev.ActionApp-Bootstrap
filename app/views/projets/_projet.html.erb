@@ -34,24 +34,7 @@
                 class=" absolute w-full h-full top-0  left-0  flex  items-end z-10
                     bg-gradient-to-t from-dark-700  to-transparent">
                 <div class="flex flex-wrap items-center p-4 sm:p-2 pb-4">
-                  <div class="flex items-center mb-2 mr-5 md:mr-10">
-                    <div class="overflow-hidden mr-4 h-10 w-10 rounded-full">
-                     <% if projet.user.avatar.attached? %>
-                      <%= image_tag(projet.user.avatar) %>
-                      <% else %>
-                      <%= image_tag "media/3.jpeg", alt:"image", class:"w-full" %>
-                    <% end %>
-                    </div>
-                    <p class="text-base text-white font-medium">
-                      par
-                      <a
-                        href="javascript:void(0)"
-                        class="text-white hover:opacity-70"
-                      >
-                        <%= projet.user.full_name %>
-                      </a>
-                    </p>
-                  </div>
+                  
                   <div class="flex items-center mb-4">
                     <p
                       class="
@@ -64,7 +47,7 @@
                         md:mr-8
                       "
                     >
-                      <span class="mr-3">
+                      <span class="mr-3"> 
                         <svg
                           width="15"
                           height="15"
@@ -100,7 +83,7 @@
                           />
                         </svg>
                       </span>
-                        <%= projet.start_date %>
+                       Date de debut: <%= projet.start_date %>
                     </p>
 
                     
