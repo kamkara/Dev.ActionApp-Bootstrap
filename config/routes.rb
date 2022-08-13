@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :actions
   root to:'welcome#index'
 
 
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   
   #DASHBOARD
   get "dashboard", to:'dashboard#index'
-  get "parametrage", to:'dashboard#home'
+  get "parametres", to:'dashboard#home'
   get "donate", to:'donate#index'
   get "agisons-ensemble", to:"involved#index"
   
