@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_13_204829) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_13_221927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -37,18 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_13_204829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
-  end
-
-  create_table "actions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.string "objectif"
-    t.string "status"
-    t.string "slug"
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_actions_on_user_id"
   end
 
   create_table "active_storage_attachments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -114,6 +102,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_13_204829) do
     t.datetime "updated_at", null: false
     t.string "terms"
     t.string "citytown"
+  end
+
+  create_table "benevols", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "full_name"
+    t.string "role"
+    t.string "img"
+    t.string "link_fb"
+    t.string "link_tw"
+    t.string "link_ldin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "blogs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -212,7 +212,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_13_204829) do
   end
 
   add_foreign_key "abouts", "users"
-  add_foreign_key "actions", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "users"

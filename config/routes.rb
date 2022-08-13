@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  resources :actions
   root to:'welcome#index'
-
-
+  
+  
   get "adhesion", to:'bememberships#new'
   get 'good', to:"bememberships#page_good"
-  resources :bememberships
-  resources :privates
-  resources :legals
-  resources :articles
-  resources :blogs
+  
   
   #Legal
   get "charte", to:"legals#show"
@@ -43,7 +38,9 @@ Rails.application.routes.draw do
   get "campagnes-list", to:"campagnes#index"
   get "edit-campagnes", to:"campagnes#edit"
 
-  
+  #BENEVOLS
+  get "Add-benevol", to:"benevols#new"
+
   #PROJETS
   get "new-projet", to:"projets#new"
   get "projets-list", to:"projets#index"
@@ -65,6 +62,13 @@ Rails.application.routes.draw do
     
   end
   
+
+  resources :bememberships
+  resources :privates
+  resources :legals
+  resources :articles
+  resources :blogs
+  resources :benevols, except: %i[new]
   resources :projets
   resources :campagnes
   resources :abouts, only: %i[create show]

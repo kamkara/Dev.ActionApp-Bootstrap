@@ -1,0 +1,2 @@
+class Benevol < ApplicationRecord
+end

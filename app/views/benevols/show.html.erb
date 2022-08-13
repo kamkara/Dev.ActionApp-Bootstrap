@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @benevol %>
+
+<div>
+  <%= link_to "Edit this benevol", edit_benevol_path(@benevol) %> |
+  <%= link_to "Back to benevols", benevols_path %>
+
+  <%= button_to "Destroy this benevol", @benevol, method: :delete %>
+</div>
