@@ -1,4 +1,5 @@
 class PrivatesController < ApplicationController
+  before_action :authenticate_user!, except: %i[show]
   before_action :set_private, only: %i[ show edit update destroy ]
 
   # GET /privates or /privates.json

@@ -39,7 +39,8 @@ Rails.application.routes.draw do
   get "edit-campagnes", to:"campagnes#edit"
 
   #BENEVOLS
-  get "Add-benevol", to:"benevols#new"
+  get "New-benevol", to:"benevols#new"
+  get "benevols", to:"benevols#index"
 
   #PROJETS
   get "new-projet", to:"projets#new"
@@ -68,7 +69,7 @@ Rails.application.routes.draw do
   resources :legals
   resources :articles
   resources :blogs
-  resources :benevols, except: %i[new]
+  resources :benevols, except: %i[new, index]
   resources :projets
   resources :campagnes
   resources :abouts, only: %i[create show]

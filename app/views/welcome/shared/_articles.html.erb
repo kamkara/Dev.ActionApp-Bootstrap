@@ -15,7 +15,11 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <%= link_to article_path(homeArticle), class:"gallery-lightbox" do %>
-                  <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
+                <% if homeArticle.heroImg.attached? %>
+                  <%= image_tag(homeArticle.heroImg, class:"img-fluid") %>
+                  <% else %>
+                    <%= image_tag "media/2.jpeg", class:"img-fluid", alt:"" %>
+                <% end %>
                 <% end %>
               </div>
             </div>

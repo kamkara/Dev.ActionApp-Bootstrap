@@ -3,7 +3,6 @@ class BenevolsController < ApplicationController
 
   # GET /benevols or /benevols.json
   def index
-    @benevols = Benevol.all
     @benevolsList = Benevol.all.order('created_at desc')
     @benevolsListMonthly = @benevolsList.monthlyActif
     @benevolsListWeekly = @benevolsListMonthly.weeklyActif
@@ -28,7 +27,7 @@ class BenevolsController < ApplicationController
 
     respond_to do |format|
       if @benevol.save
-        format.html { redirect_to benevol_url(@benevol), notice: "Benevol was successfully created." }
+        format.html { redirect_to benevols_path, notice: "Benevol was successfully created." }
         format.json { render :show, status: :created, location: @benevol }
       else
         format.html { render :new, status: :unprocessable_entity }
