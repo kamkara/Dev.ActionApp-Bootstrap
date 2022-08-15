@@ -1,5 +1,5 @@
 class CampagnesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[ show index]
   before_action :set_campagne, only: %i[ show edit update destroy ]
 
   # GET /campagnes or /campagnes.json

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   
   
   get "agir", to:'agir#index'
-  get 'home/index'
   
   get "action-projet", to:'action_page#index'
   get "dons", to:'donner#index'
@@ -34,8 +33,8 @@ Rails.application.routes.draw do
 
 
   # CAMPAGNES
-  get "nouvelle-campagnes", to:"campagnes#new"
-  get "campagnes-list", to:"campagnes#index"
+  get "new-campagne", to:"campagnes#new"
+  get "campagnes", to:"campagnes#index"
   get "edit-campagnes", to:"campagnes#edit"
 
   #BENEVOLS

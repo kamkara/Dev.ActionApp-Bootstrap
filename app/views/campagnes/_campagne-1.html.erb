@@ -1,0 +1,38 @@
+<div id="<%= dom_id campagne %>">
+<div class="container bg-white border-1 rounded-md m-2" >
+  <p>
+    <%= campagne.title %>
+  </p>
+
+  <p>
+    <strong>Heroimg:</strong>
+    <%= campagne.heroImg %>
+  </p>
+
+  <div class="container">
+   
+    <%= campagne.content %>
+  </div>
+
+  <p>
+    <strong>Start date:</strong>
+    <%= campagne.start_date %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <span class="font-bold"> <%= campagne.status %>  </span> d'approbation
+  </p>
+
+  <p>
+    <strong>Objectif:</strong>
+    <%= campagne.amount %>
+  </p>
+
+  <p>
+    <strong>Auteur:</strong>
+    <%= campagne.user.full_name %>
+  </p>
+
+</div>
+</div>

@@ -7,7 +7,7 @@ class Campagne < ApplicationRecord
   Campagne.all.with_rich_text_content_and_embeds # Preload both body and attachments.
 
 
-  STATUS= ["Encours", "Approbation", "Public", "La lune", "Archive" ]
+  STATUS= ["Encours", "Approver", "La lune", "Archive" ]
   validates :title, :content, :start_date, :amount, presence: true
   #validates_comparison_of :start_date, greater_than: -> { Date.today }
   validates :title, :content, length: { minimum:5}
