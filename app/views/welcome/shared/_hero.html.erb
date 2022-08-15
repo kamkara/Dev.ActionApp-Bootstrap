@@ -6,17 +6,98 @@
           <h1 class=""><span class="bg-blue-400 p-2  rounded-b-xl rounded-tr-xl">Apportons le bien-etre</span> </h1>
           
           <h2 class="py-2">La crise de l'eau, l'éducation et l'élèctricité sont massives. <br> Ensemble, nous pouvons les résoudres.</h2>
-            <h2 class="font-bold">Rejoignez Action<sup>+</sup></h2>
-          <div class="btns">
-            <%#= link_to 'Soutenir Un Projet', "action-projet", class:"btn-menu animated fadeInUp scrollto" %>
-            <a href="#projets-soutenir" class="btn-book animated fadeInUp 
-            scrollto text-white bg-red-500 hover:bg-red-400 focus:outline
-             focus:ring-4 focus:ring-red-300 font-medium rounded-full text-md px-5
-              py-2.5 text-center mr-2 mb-2">Soutenir Un Projet</a>
-            <%= link_to "Faire un Don", "action-projet", class:"btn-book  animated fadeInUp scrollto border-lg
-            text-white bg-red-500 hover:bg-red-400 focus:outline focus:ring-4 focus:ring-red-300 font-medium
-             rounded-full text-md px-5 py-2.5 text-center mr-2 mb-2" %>
+            <h2 class="font-bold">Soutenez Action<sup>+</sup></h2>
+          
+            <!-- component -->
+<!-- This is an example component -->
+<div class="max-w-2xl mx-auto bg-white rounded">
+
+	<div id="accordion-collapse" data-accordion="collapse">
+		<h2 id="accordion-collapse-heading-1">
+			<button type="button" class="uppercase font-bold accordion-button collapsed relative flex 
+      items-center w-full py-4 px-5 text-base text-white text-left bg-red-500 border-0
+       rounded-none transition focus:outline-none"
+       data-accordion-target="#accordion-collapse-body-1" 
+       aria-expanded="true" aria-controls="accordion-collapse-body-1">
+      <span>Faire un don</span>
+     
+    </button>
+		</h2>
+		<div id="accordion-collapse-body-1" aria-labelledby="accordion-collapse-heading-1" class="scroll-auto" >
+			<div class="p-5 border border-gray-200">
+				<div class="relative p-2 rounded border ">
+              <label for="name" class="text-gray-800 text-sm font-bold ">Nom Complet</label>
+              <input id="name" class="my-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 
+              font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Konan James" />
+              
+              <label for="email2" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">N° de la Carte</label>
+              <div class="relative ">
+                <div class="absolute text-gray-600 flex items-center px-4 border-r h-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <line x1="7" y1="15" x2="7.01" y2="15" />
+                    <line x1="11" y1="15" x2="13" y2="15" />
+                  </svg>
+                </div>
+                <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-16 text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
+              </div>
+              <div class="flex my-2">
+                <div class="relative">
+                <label for="expiry" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Date D'Expiration</label>
+                  <input id="expiry" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+                </div>
+
+                <!-- CVC-->
+                <div class="relative ml-2">
+                  <label for="cvc" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">CVC</label>
+                  <input id="cvc" class="mb-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+                </div>
+              </div>
+              
+              <div class="relative mb-2">
+              <label class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Montant du Don</label><hr class="mb-3">
+               <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">10$</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked >
+                <label class="form-check-label" for="inlineRadio2">20$</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                <label class="form-check-label" for="inlineRadio3">50$</label>
+              </div>
+                <input class="mb-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Autres montant" />
+              
+              </div>
+
+              <div class="flex items-center justify-start w-full">
+                  <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700
+                   transition duration-150 ease-in-out hover:bg-green-600 bg-green-700 rounded
+                   text-white px-8 py-2 text-sm">Don Mensuel</button>
+                  <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3
+                   bg-gray-300 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400
+                    hover:bg-gray-300 border rounded px-8 py-2 text-sm" >Une Fois</button>
+              </div>
+              <button class="cursor-pointer absolute top-0 right-0  mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" role="button">
+                  <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+              </button>
+            </div>           
           </div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+          
         </div>
         
 
