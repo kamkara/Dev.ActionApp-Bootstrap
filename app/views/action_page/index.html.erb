@@ -98,7 +98,11 @@
             <div class="mb-10 group wow fadeInUp" data-wow-delay=".1s">
               <div class="rounded overflow-hidden mb-8">
                 <%= link_to projet_path(action), class:"block" do %>
+                  <% if  %>
+                  <%= image_tag(action.heroImg, class:"w-full transition group-hover:scale-125 group-hover:rotate-6") %>
+                  <% else %>
                   <%= image_tag "media/5.jpeg", alt:"image", class:"w-full transition group-hover:scale-125 group-hover:rotate-6"%>
+                  <% end %>
                 <% end %>
               </div>
               <div>
