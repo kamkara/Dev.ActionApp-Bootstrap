@@ -24,7 +24,7 @@
               
               <% if campagne.heroImg.attached? %>
                 <div class="w-full h-full object-cover object-center">
-                  <%= image_tag(campagne.heroImg) %>
+                  <%= image_tag(campagne.heroImg, alt:"image", class:"w-full h-full object-cover object-center") %>
                 </div>
               <% else %>
                 <%= image_tag "media/4.jpeg", alt:"image", class:"w-full h-full object-cover object-center" %>
