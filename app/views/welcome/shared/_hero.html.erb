@@ -23,26 +23,22 @@
      
     </button>
 		</h2>
-		<div id="accordion-collapse-body-1" aria-labelledby="accordion-collapse-heading-1" class="scroll-auto" >
-			<div class="p-5 border border-gray-200">
+		<div id="accordion-collapse-body-1" aria-labelledby="accordion-collapse-heading-1" class="max-h-200 overflow-y-auto" >
+			<div class=" px-5 py-2 border border-gray-200">
 				<div class="relative p-2 rounded border ">
-              <label for="name" class="text-gray-800 text-sm font-bold ">Nom Complet</label>
-              <input id="name" class="my-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 
-              font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Konan James" />
+      <div class="flex mt-2">
+        <div class="">
+          
+          <input id="name" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 
+                font-normal h-10  text-sm border-gray-300 rounded border" placeholder="Nom Complet :" />
+        </div>
               
-              <label for="email2" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">N° de la Carte</label>
-              <div class="relative ">
-                <div class="absolute text-gray-600 flex items-center px-4 border-r h-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <rect x="3" y="5" width="18" height="14" rx="3" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                    <line x1="7" y1="15" x2="7.01" y2="15" />
-                    <line x1="11" y1="15" x2="13" y2="15" />
-                  </svg>
-                </div>
-                <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-16 text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
-              </div>
+        <div class=" ml-2">
+          
+                
+          <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
+        </div>
+      </div>
               <div class="flex my-2">
                 <div class="relative">
                 <label for="expiry" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Date D'Expiration</label>
