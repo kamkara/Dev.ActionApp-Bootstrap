@@ -23,17 +23,20 @@
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3 class="text-white"> <%= homeProjet.title %></h3>
-                  <div class="price">
+                  <div class="price ">
                     <p><span>Objectif: <%= homeProjet.amount %></span></p>
                   </div>
-                  <p class="fst-italic">
-                    <%= truncate(strip_tags(homeProjet.content.to_s.html_safe), length: 600) %>
-                  </p>
+                  <div class=" mb-4">
+                    <%= link_to projet_path(homeProjet), class:"hover:text-white text-white no-underline" do %>
+                      <%= truncate(strip_tags(homeProjet.content.to_s.html_safe), length: 600)%>
+                      <span class=" text-red-500 " id=start-reading><i class="mx-2">Découvrez plus >> </i></span>
+                    <% end %>
+                  </div>
                                  
                   <button type="button" class="btn-book animated fadeInUp 
                           scrollto text-white bg-red-500 hover:bg-red-400 focus:outline
                           focus:ring-4 focus:ring-red-300 font-bold rounded-b-xl rounded-tr-xl text-xl px-5
-                            py-2.5 text-center mr-2 mb-2" data-bs-toggle="modal" data-bs-target="#First-staticBackdrop">
+                            py-2.5 text-center mr-2 mb-2 uppercase" data-bs-toggle="modal" data-bs-target="#First-staticBackdrop">
                                     je fais un don
                   </button>
                   
@@ -117,7 +120,7 @@
                               <input class="mb-8 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Autres montant" />
                             
                             </div>
-
+                            <!--
                             <div class="flex items-center justify-start w-full">
                                 <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700
                                 transition duration-150 ease-in-out hover:bg-green-600 bg-green-700 rounded
@@ -126,6 +129,7 @@
                                 bg-gray-300 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400
                                   hover:bg-gray-300 border rounded px-8 py-2 text-sm" >Une Fois</button>
                             </div>
+                            -->
                             <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
                                 <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
@@ -139,7 +143,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn bg-red-500 text-white font-semibold">Je Confirme Mon Don</button>
+                      <button type="button" class="btn bg-red-500 text-white font-semibold uppercase">Confirmez votre Don</button>
 
                     </div>
                   </div>

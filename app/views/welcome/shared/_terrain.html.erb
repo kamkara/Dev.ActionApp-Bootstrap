@@ -9,7 +9,10 @@
             <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
                 <li class="nav-item bg-blue-200">
-                  <a class="nav-link active show bg-blue-200 hover:bg-blue-400" data-bs-toggle="<%= homeCamp.title %>" href="#<%= homeCamp.title %>"><%= homeCamp.title %></a>
+                  <a class="nav-link active show  bg-blue-200 hover:bg-blue-400"
+                   data-bs-toggle="<%= homeCamp.title %>" href="#<%= homeCamp.title %>">
+                  <span class="font-bold"><%= homeCamp.title %></span> 
+                  </a>
                 </li>
               </ul>
             </div>
@@ -18,10 +21,10 @@
                 <div class="tab-pane active show" id="<%= homeCamp.title %>">
                   <div class="row">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <div class="fst-italic">
+                      <div class="">
                         <%= link_to campagne_path(homeCamp), class:"hover:text-black text-black no-underline" do %>
                             <%= truncate(strip_tags(homeCamp.content.to_s.html_safe), length: 400)%>
-                            <span class="bg-blue-300" id=start-reading><i class="mx-2">Lire plus >> </i></span>
+                            <span class="text-red-500" id=start-reading><i class="mx-2">Lire plus >> </i></span>
                         <% end %>
                       </div>
                     </div>

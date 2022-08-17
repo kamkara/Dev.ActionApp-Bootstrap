@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "agir", to:'agir#index'
   
   get "action-projet", to:'action_page#index'
-  get "dons", to:'donner#index'
+  #get "dons", to:'donner#index'
   #### Accounted #####
   get "connecting", to:'accounted#signInMember'
   get "adhesion-partner", to:'accounted#signUpMember'
@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   #DASHBOARD
   get "dashboard", to:'dashboard#index'
   get "parametres", to:'dashboard#home'
-  get "donate", to:'donate#index'
   get "agisons-ensemble", to:"involved#index"
   
   # MEMBERSHIP
@@ -48,14 +47,6 @@ Rails.application.routes.draw do
   
 
 
-  #ABOUTS
-  get "mission", to:"abouts#show"
-  get "nous-decouvrir", to:"abouts#index"
-  get "mission_new", to:"abouts#new"
-  get "mission_editer", to:"abouts#edit"
-  get "mission_supprimer", to:"abouts#destroy"
- 
-
   devise_scope :user do
     get 'profile/edit'    => 'devise/registrations#edit',   :as => :edit_user_registration
     get 'profile/cancel'  => 'devise/registrations#cancel', :as => :cancel_user_registration
@@ -71,8 +62,7 @@ Rails.application.routes.draw do
   resources :benevols, except: %i[new, index]
   resources :projets
   resources :campagnes
-  resources :abouts, only: %i[create show]
-
+  
   devise_for  :users,
     :path => '',
     :path_names =>
