@@ -1,7 +1,7 @@
 <!-- Top Bar -->
 <%#= render "welcome/shared/top_bar" %>
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente bg-white py-2 text-4xl">
+  <header id="header" class="fixed-top d-flex align-items-cente bg-white py-2 uppercase text-4xl">
   
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
       <h1 class="logo me-auto me-lg-0">
@@ -17,9 +17,14 @@
           <li><a class="nav-link scrollto" href="#why-us">Nous Aider</a></li>
           <li><a class="nav-link scrollto" href="agisons-ensemble">Agissons Ensemble</a></li>
           <li><%#= link_to "Agissons Ensemble" agir_path, class:"nav-link scrollto" %></li>
-          
-          <li class=""><a href="#specials"><span>En Action</span></a></li>
-          
+
+          <li class="dropdown"><a href="#"><span>En Action</span> <i class="dropdown-toggle"></i></a>
+            <ul>
+              <li><a href="<%= good_path %>#eau-potable">EAUX POTABLE</a></li>
+              <li><a href="<%= good_path %>#electricite">ELECTRICITÉ</a></li>
+              <li><a href="<%= good_path %>#education">EDUCATION</a></li>
+            </ul>
+          </li>         
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
