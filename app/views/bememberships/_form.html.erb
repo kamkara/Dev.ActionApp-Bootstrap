@@ -24,8 +24,8 @@
 	<div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
 
     <%= form_with(model: bemembership) do |f| %>
-      <h1 class="text-gray-800 font-bold text-2xl mb-2">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
-      <p class="text-sm font-normal text-gray-600 mb-2">Devenez Membre Adherant d'Action<sup>+</sup></p>
+      <h1 class="text-gray-800 font-bold text-2xl ">Vous et Action<sup>+</sup> Agisons Ensemble pour sauver des vies</h1>
+      <p class="text-sm font-normal text-gray-600 ">Devenez Membre Adherant d'Action<sup>+</sup></p>
         <% if bemembership.errors.any? %>
           <div style="color: red">
             <h2><%= pluralize(bemembership.errors.count, "erreur") %> trouvée. Veillez rectifier les points:</h2>
@@ -39,24 +39,74 @@
         <% end %>
         <div class="mx-2">	
         <div class="flex items-center mt-8 mb-2">
-          <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Nom ..." %>
-          <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Prénom..." %>
+          <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400
+           outline-none border rounded-md py-2 w-full 
+           focus:outline-none focus:ring focus:border-blue-200", 
+           placeholder:"Nom ..." %>
+          <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400
+           outline-none border ml-2 rounded-md py-2 w-full 
+           focus:outline-none focus:ring focus:border-blue-200", placeholder:"Prénom..." %>
         </div>
     
-        <%= f.email_field :email, placeholder:"Addresse Email ...", class:"placeholder:italic placeholder:text-slate-400 outline-none flex border py-2 rounded-md w-full my-2" %>			
+        <%= f.email_field :email, placeholder:"Addresse Email ...", 
+        class:"placeholder:italic placeholder:text-slate-400
+           outline-none border rounded-md py-2 w-full 
+           focus:outline-none focus:ring focus:border-blue-200" %>			
       
-        <div class="flex items-center mt-8 mb-2">
-          <%= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 outline-none border rounded-md py-2 w-full", placeholder:"Pays de résidence ..." %>
-          <%= f.text_field :citytown, class:"placeholder:italic placeholder:text-slate-400 outline-none border ml-2 rounded-md py-2 w-full", placeholder:"Ville de résidence ..." %>
+        <div class="flex items-center my-2">
+          <%= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 
+          border rounded-md py-2 w-full focus:outline-none focus:ring focus:border-blue-500",
+           placeholder:"Pays de résidence ..." %>
+
+          <%= f.text_field :citytown, class:"placeholder:italic placeholder:text-slate-400
+           outline-none border ml-2 rounded-md py-2 w-full 
+           focus:outline-none focus:ring focus:border-blue-200", 
+          placeholder:"Ville de résidence ..." %>
         </div>
         
-          <%= f.text_field :contact, class:"flex border py-2 ml-2 rounded-md w-full placeholder:mx-4 outline-none", placeholder:"N° télèphone suivi de indicatif du pays..." %>	
-        <div class="flex w-full py-2">
+          <%= f.text_field :contact, class:"flex border py-2 rounded-md w-full
+           placeholder:mx-4 focus:outline-none focus:ring focus:border-blue-500", 
+           placeholder:"N° télèphone suivi de indicatif du pays..." %>	
+          <%= f.text_field :nationality,
+           class:"placeholder:italic placeholder:text-slate-400
+           outline-none border my-2 rounded-md py-2 w-full 
+           focus:outline-none focus:ring focus:border-blue-200",
+            placeholder:"Votre Nationalité..." %>	
+        <div class="flex w-full">
+          <div class="mr-4">
+            <p class="font-semibold">Salarié? :</p>
+          </div>
+          <%= f.radio_button :employer, 'Non', checked: true%> <span class="mx-2">Non</span>
+          <%= f.radio_button :employer, 'Oui' %> <span class="mx-2">Oui</span>
+          <%= f.radio_button :employer, 'Entrepreneur' %> <span class="mx-2">Entrepreneur</span>
+        </div>
+          <%= f.text_field :profession, class:"flex border py-2  rounded-md w-full 
+          placeholder:mx-4 outline-none", placeholder:"Votre Profession..." %>	
+        
+        <div class="flex w-full">
+          <div class="mr-4">
+            <p class="font-semibold">Matrimoniale? :</p>
+          </div>
+          <%= f.radio_button :matrimonial, 'Mademoiselle', checked: true , class:"ml-2"%> <span class="mr-2">Mlle</span>
+          <%= f.radio_button :matrimonial, 'Madame', class:"ml-2" %> <span class="mr-2">Mme</span>
+          <%= f.radio_button :matrimonial, 'Monsieur' %> <span class="">M.</span>
+        </div>
+        
+        <div class="flex w-full">
           <div class="mr-4">
             <p class="font-semibold">Vous êtes? :</p>
           </div>
-          <%= f.radio_button :gender, 'Femme' %> <span class="mx-2">Femme</span>
-          <%= f.radio_button :gender, 'Homme' %> <span class="mx-2">Homme</span>
+          <%= f.radio_button :gender, 'Femme' , checked: true, class:"ml-2"%> <span class:"mr-2">Femme</span>
+          <%= f.radio_button :gender, 'Homme', class:"ml-2"%> <span class="">Homme</span>
+        </div>
+        <div class="w-full my-2">
+          <div class="">
+            <p class="font-semibold sm:text-sm">Comment avez vous connu Action<sup class="">+</sup> ? : <br></p>
+          </div>
+          <%= f.radio_button :source, 'Ami' , checked: true , class:"ml-2" %> <span class="mr-2">Ami(e)</span>
+          <%= f.radio_button :source, 'Réseau_Sociaux' %> <span class="mr-2">Réseau Sociaux</span>
+          <%= f.radio_button :source, 'Autres' %> <span class="mx-2">Autres</span>
+          
         </div>
 
 
@@ -65,13 +115,13 @@
           <p class="text-sm">
           
             Oui, j'adhère à <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="font-semibold underline">
-            la charte des valeurs, aux statuts et aux règles de fonctionnement d'Action</a><sup class="">+</sup>, ainsi qu'aux
-            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="font-semibold underline">conditions générales d'utilisation </a> <span class="no-underline ">et à la politique
-            de</span>   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-3" class="font-semibold underline ml-1"> protection des données </a> de la plateforme.
+            la charte des valeurs</a>, <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="font-semibold underline"> aux statuts</a> et  <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-3" class="font-semibold underline"> aux règles de fonctionnement d'Action</a><sup class="">+</sup>, ainsi qu'aux
+            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-4" class="font-semibold underline">conditions générales d'utilisation </a> <span class="no-underline ">et à la politique
+            de</span>   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-5" class="font-semibold underline ml-1"> protection des données </a> de la plateforme.
           </p>
         </div>
         <div>
-          <%= f.submit "Terminer Adhésion", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
+          <%= f.submit "Oui J'Adhère", class:"uppercase block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
         </div>
         </div>
     <% end %>
@@ -84,11 +134,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title font-semibold" id="exampleModalLabel">Protection des données</h5>
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Résumé: Chartes des valeurs</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+        Le Résumé s'affichera ici
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
@@ -102,11 +152,29 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title font-semibold" id="exampleModalLabel">La charte et les règles de fonctionnement d'Action<sup class="">+</sup></h5>
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Résumé des Status<sup class="">+</sup></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+       Le Résumé s'affichera ici
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal règles de fonctionnement d'Action-->
+<div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Résumé: Règles de fonctionnement d'Action<sup class="">+</sup></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      Le Résumé s'affichera ici
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
@@ -116,15 +184,33 @@
   </div>
 </div>
 <!-- Modal CGU-->
-<div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title font-semibold" id="exampleModalLabel">Les conditions générale d'utilisation</h5>
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Résumé: Les conditions générale d'utilisation</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae doloribus adipisci asperiores, veritatis assumenda. Consequuntur ipsam vitae accusantium quod, nostrum animi consequatur nulla similique minus quae deserunt ea voluptate?
+       Le Résumé s'affichera ici
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal CGU-->
+<div class="modal fade" id="exampleModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-semibold" id="exampleModalLabel">Résumé: protection des données</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Le Résumé s'affichera ici
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>

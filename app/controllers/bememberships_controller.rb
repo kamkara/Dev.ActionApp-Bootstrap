@@ -1,5 +1,5 @@
 class BemembershipsController < ApplicationController
-  before_action :set_bemembership, only: %i[  edit update destroy ]
+  before_action :set_bemembership, only: %i[ edit update destroy ]
 
   # GET /bememberships or /bememberships.json
   def index
@@ -70,6 +70,9 @@ class BemembershipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bemembership_params
-      params.require(:bemembership).permit(:first_name, :last_name, :email, :country, :contact, :gender, :terms, :citytown)
+      params.require(:bemembership).permit(:first_name, :last_name, :email, :country,
+                                            :contact, :gender, :terms, :citytown,
+                                            :source, :employer, :profession, :matrimonial,
+                                            :nationality)
     end
 end
